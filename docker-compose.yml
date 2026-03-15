@@ -1,0 +1,54 @@
+
+services:
+
+  web:
+    build:
+      context: .
+      dockerfile: docker/web.Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+    networks:
+      - aayes
+
+  api:
+    build:
+      context: .
+      dockerfile: docker/api.Dockerfile
+    ports:
+      - "3001:3001"
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - aayes
+
+  postgres:
+    image: postgres:15
+    container_name: aayes_postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: aayeshol
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - aayes
+
+  redis:
+    image: redis:7
+    container_name: aayes_redis
+    ports:
+      - "6379:6379"
+    networks:
+      - aayes
+
+volumes:
+  postgres_data:
+
+networks:
+  aayes:
+    driver: bridge

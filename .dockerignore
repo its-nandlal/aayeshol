@@ -1,0 +1,30 @@
+# Node modules (docker will install fresh)
+node_modules
+**/node_modules
+
+# Logs
+logs
+*.log
+
+# Local env files
+.env
+.env.local
+.env.*.local
+
+# OS/IDE files
+.DS_Store
+.vscode/
+.idea/
+
+# Git
+.git
+.gitignore
+
+# Build outputs (let Docker build from fresh code)
+dist/
+build/
+out/
+
+# Optional: temporary files
+*.tgz
+*.zip
