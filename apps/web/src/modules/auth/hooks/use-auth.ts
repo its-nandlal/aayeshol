@@ -17,12 +17,12 @@ async function signInApi(formData: FormData): Promise<SigninResponse> {
   return data;
 }
 
-async function sessionApi(): Promise<SigninResponse | null> {
+async function sessionUserApi(): Promise<SigninResponse | null> {
   try {
-    const { data } = await api.get("/api/auth/session"); // ← correct endpoint
+    const { data } = await api.get("/users/me"); // ← correct endpoint
     return data;
-  } catch (err) {
-    return null; // unauthenticated → null return
+  } catch (err: any) {
+    return err;
   }
 }
 
@@ -90,11 +90,13 @@ export const useLogout = () => {
 export const useSession = () => {
   return useQuery({
     queryKey: ["session"],
-    queryFn: sessionApi,
+    queryFn: sessionUserApi,
     staleTime: 1000 * 60 * 5,     // 5 min तक fresh
-    gcTime: 1000 * 60 * 30,       // 30 min cache
+    retryDelay: 1000 * 60 * 5,
     retry: false,                 // session fail पर retry मत करो
     refetchOnWindowFocus: false,  // window focus पर मत refetch
+  refetchOnMount: false,
+
     // enabled: !!localStorage.getItem("token"), // optional: token हो तभी run
   });
 };

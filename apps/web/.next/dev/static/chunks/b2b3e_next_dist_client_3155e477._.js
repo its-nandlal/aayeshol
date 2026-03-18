@@ -11,8 +11,8 @@ Object.defineProperty(exports, "Portal", {
         return Portal;
     }
 });
-const _react = __turbopack_context__.r("[project]/apps/web/node_modules/.pnpm/react@19.2.3/node_modules/react/index.js [client] (ecmascript)");
-const _reactdom = __turbopack_context__.r("[project]/apps/web/node_modules/.pnpm/react-dom@19.2.3_react@19.2.3/node_modules/react-dom/index.js [client] (ecmascript)");
+const _react = __turbopack_context__.r("[project]/node_modules/.pnpm/react@19.2.3/node_modules/react/index.js [client] (ecmascript)");
+const _reactdom = __turbopack_context__.r("[project]/node_modules/.pnpm/react-dom@19.2.3_react@19.2.3/node_modules/react-dom/index.js [client] (ecmascript)");
 const Portal = ({ children, type })=>{
     const [portalNode, setPortalNode] = (0, _react.useState)(null);
     (0, _react.useEffect)(()=>{
@@ -907,9 +907,9 @@ _export(exports, {
 });
 const _interop_require_default = __turbopack_context__.r("[project]/node_modules/.pnpm/@swc+helpers@0.5.15/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [client] (ecmascript)");
 const _interop_require_wildcard = __turbopack_context__.r("[project]/node_modules/.pnpm/@swc+helpers@0.5.15/node_modules/@swc/helpers/cjs/_interop_require_wildcard.cjs [client] (ecmascript)");
-const _jsxruntime = __turbopack_context__.r("[project]/apps/web/node_modules/.pnpm/react@19.2.3/node_modules/react/jsx-runtime.js [client] (ecmascript)");
-const _reactdom = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/apps/web/node_modules/.pnpm/react-dom@19.2.3_react@19.2.3/node_modules/react-dom/index.js [client] (ecmascript)"));
-const _react = /*#__PURE__*/ _interop_require_wildcard._(__turbopack_context__.r("[project]/apps/web/node_modules/.pnpm/react@19.2.3/node_modules/react/index.js [client] (ecmascript)"));
+const _jsxruntime = __turbopack_context__.r("[project]/node_modules/.pnpm/react@19.2.3/node_modules/react/jsx-runtime.js [client] (ecmascript)");
+const _reactdom = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/node_modules/.pnpm/react-dom@19.2.3_react@19.2.3/node_modules/react-dom/index.js [client] (ecmascript)"));
+const _react = /*#__PURE__*/ _interop_require_wildcard._(__turbopack_context__.r("[project]/node_modules/.pnpm/react@19.2.3/node_modules/react/index.js [client] (ecmascript)"));
 const _headmanagercontextsharedruntime = __turbopack_context__.r("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.29.0_react-dom@19.2.3_react@19.2.3__react@19.2.3/node_modules/next/dist/shared/lib/head-manager-context.shared-runtime.js [client] (ecmascript)");
 const _setattributesfromprops = __turbopack_context__.r("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.29.0_react-dom@19.2.3_react@19.2.3__react@19.2.3/node_modules/next/dist/client/set-attributes-from-props.js [client] (ecmascript)");
 const _requestidlecallback = __turbopack_context__.r("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.29.0_react-dom@19.2.3_react@19.2.3__react@19.2.3/node_modules/next/dist/client/request-idle-callback.js [client] (ecmascript)");
@@ -1462,8 +1462,8 @@ Object.defineProperty(exports, "default", {
     }
 });
 const _interop_require_default = __turbopack_context__.r("[project]/node_modules/.pnpm/@swc+helpers@0.5.15/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [client] (ecmascript)");
-const _jsxruntime = __turbopack_context__.r("[project]/apps/web/node_modules/.pnpm/react@19.2.3/node_modules/react/jsx-runtime.js [client] (ecmascript)");
-const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/apps/web/node_modules/.pnpm/react@19.2.3/node_modules/react/index.js [client] (ecmascript)"));
+const _jsxruntime = __turbopack_context__.r("[project]/node_modules/.pnpm/react@19.2.3/node_modules/react/jsx-runtime.js [client] (ecmascript)");
+const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/node_modules/.pnpm/react@19.2.3/node_modules/react/index.js [client] (ecmascript)"));
 const _router = __turbopack_context__.r("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.29.0_react-dom@19.2.3_react@19.2.3__react@19.2.3/node_modules/next/dist/client/router.js [client] (ecmascript)");
 function withRouter(ComposedComponent) {
     function WithRouterWrapper(props) {
@@ -1530,7 +1530,7 @@ _export(exports, {
     }
 });
 const _interop_require_default = __turbopack_context__.r("[project]/node_modules/.pnpm/@swc+helpers@0.5.15/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [client] (ecmascript)");
-const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/apps/web/node_modules/.pnpm/react@19.2.3/node_modules/react/index.js [client] (ecmascript)"));
+const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/node_modules/.pnpm/react@19.2.3/node_modules/react/index.js [client] (ecmascript)"));
 const _router = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.29.0_react-dom@19.2.3_react@19.2.3__react@19.2.3/node_modules/next/dist/shared/lib/router/router.js [client] (ecmascript)"));
 const _routercontextsharedruntime = __turbopack_context__.r("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.29.0_react-dom@19.2.3_react@19.2.3__react@19.2.3/node_modules/next/dist/shared/lib/router-context.shared-runtime.js [client] (ecmascript)");
 const _iserror = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.29.0_react-dom@19.2.3_react@19.2.3__react@19.2.3/node_modules/next/dist/lib/is-error.js [client] (ecmascript)"));
@@ -1702,8 +1702,8 @@ _export(exports, {
     }
 });
 const _interop_require_default = __turbopack_context__.r("[project]/node_modules/.pnpm/@swc+helpers@0.5.15/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [client] (ecmascript)");
-const _jsxruntime = __turbopack_context__.r("[project]/apps/web/node_modules/.pnpm/react@19.2.3/node_modules/react/jsx-runtime.js [client] (ecmascript)");
-const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/apps/web/node_modules/.pnpm/react@19.2.3/node_modules/react/index.js [client] (ecmascript)"));
+const _jsxruntime = __turbopack_context__.r("[project]/node_modules/.pnpm/react@19.2.3/node_modules/react/jsx-runtime.js [client] (ecmascript)");
+const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/node_modules/.pnpm/react@19.2.3/node_modules/react/index.js [client] (ecmascript)"));
 const _router = __turbopack_context__.r("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.29.0_react-dom@19.2.3_react@19.2.3__react@19.2.3/node_modules/next/dist/client/router.js [client] (ecmascript)");
 const nextjsRouteAnnouncerStyles = {
     border: 0,
@@ -3040,10 +3040,10 @@ _export(exports, {
     }
 });
 const _interop_require_default = __turbopack_context__.r("[project]/node_modules/.pnpm/@swc+helpers@0.5.15/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [client] (ecmascript)");
-const _jsxruntime = __turbopack_context__.r("[project]/apps/web/node_modules/.pnpm/react@19.2.3/node_modules/react/jsx-runtime.js [client] (ecmascript)");
+const _jsxruntime = __turbopack_context__.r("[project]/node_modules/.pnpm/react@19.2.3/node_modules/react/jsx-runtime.js [client] (ecmascript)");
 __turbopack_context__.r("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.29.0_react-dom@19.2.3_react@19.2.3__react@19.2.3/node_modules/next/dist/build/polyfills/polyfill-module.js [client] (ecmascript)");
-const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/apps/web/node_modules/.pnpm/react@19.2.3/node_modules/react/index.js [client] (ecmascript)"));
-const _client = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/apps/web/node_modules/.pnpm/react-dom@19.2.3_react@19.2.3/node_modules/react-dom/client.js [client] (ecmascript)"));
+const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/node_modules/.pnpm/react@19.2.3/node_modules/react/index.js [client] (ecmascript)"));
+const _client = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/node_modules/.pnpm/react-dom@19.2.3_react@19.2.3/node_modules/react-dom/client.js [client] (ecmascript)"));
 const _headmanagercontextsharedruntime = __turbopack_context__.r("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.29.0_react-dom@19.2.3_react@19.2.3__react@19.2.3/node_modules/next/dist/shared/lib/head-manager-context.shared-runtime.js [client] (ecmascript)");
 const _mitt = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.29.0_react-dom@19.2.3_react@19.2.3__react@19.2.3/node_modules/next/dist/shared/lib/mitt.js [client] (ecmascript)"));
 const _routercontextsharedruntime = __turbopack_context__.r("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.29.0_react-dom@19.2.3_react@19.2.3__react@19.2.3/node_modules/next/dist/shared/lib/router-context.shared-runtime.js [client] (ecmascript)");

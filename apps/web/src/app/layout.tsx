@@ -3,6 +3,7 @@ import { Geist, Funnel_Sans, Funnel_Display } from "next/font/google";
 import "./globals.css";
 import QueryProvider from "@/lib/providers/qurey-provider";
 import { Toaster } from "@/components/ui/sonner";
+import { AuthProvider } from "@/lib/providers/auth-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -59,8 +60,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${funnelSans.variable} ${funnelDisplay.variable} text-zinc-200 antialiased`}
       >
         <QueryProvider>
+          <AuthProvider>
           {children}
           <Toaster />
+          </AuthProvider>
         </QueryProvider>
       </body>
     </html>

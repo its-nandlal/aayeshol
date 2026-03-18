@@ -8,7 +8,7 @@ R.c("server/chunks/ssr/69652_@swc_helpers_cjs__interop_require_wildcard_cjs_f6d6
 R.c("server/chunks/ssr/[externals]__e8a2741f._.js")
 R.c("server/chunks/ssr/apps_web_src_app_dd37023f._.js")
 R.c("server/chunks/ssr/b2b3e_next_dist_client_components_builtin_global-error_e9f28481.js")
-R.c("server/chunks/ssr/[root-of-the-server]__316b9c14._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__9fcba8f0._.js")
 R.c("server/chunks/ssr/b2b3e_next_dist_client_components_fe4d1120._.js")
 R.c("server/chunks/ssr/b2b3e_next_dist_client_components_builtin_forbidden_f38c7b3a.js")
 R.c("server/chunks/ssr/b2b3e_next_dist_client_components_builtin_unauthorized_cfd039bd.js")

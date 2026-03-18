@@ -597,12 +597,12 @@ async function signInApi(formData) {
     const { data } = await __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$web$2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["api"].post("/api/auth/sign-in/email", formData);
     return data;
 }
-async function sessionApi() {
+async function sessionUserApi() {
     try {
-        const { data } = await __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$web$2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["api"].get("/api/auth/session"); // ← correct endpoint
+        const { data } = await __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$web$2f$src$2f$lib$2f$axios$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["api"].get("/users/me"); // ← correct endpoint
         return data;
     } catch (err) {
-        return null; // unauthenticated → null return
+        return err;
     }
 }
 const useSignUp = ()=>{
@@ -703,7 +703,7 @@ const useSession = ()=>{
         queryKey: [
             "session"
         ],
-        queryFn: sessionApi,
+        queryFn: sessionUserApi,
         staleTime: 1000 * 60 * 5,
         gcTime: 1000 * 60 * 30,
         retry: false,

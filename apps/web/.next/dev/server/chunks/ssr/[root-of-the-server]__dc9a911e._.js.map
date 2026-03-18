@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///Users/nick/Desktop/Aayeshol/apps/web/src/modules/auth/store/store.auth.ts"],"sourcesContent":["import { create } from \"zustand\"\nimport { AuthUser } from \"@/../../packages/types/auth\"\n\ntype AuthSate = {\n    user : AuthUser | null\n    setUser: (user: AuthUser | null) => void\n}\n\nexport const useAuthStore = create<AuthSate>((set) => ({\n    user: null,\n    setUser: (user) => set({user})\n}))"],"names":[],"mappings":";;;;AAAA;;AAQO,MAAM,eAAe,IAAA,uVAAM,EAAW,CAAC,MAAQ,CAAC;QACnD,MAAM;QACN,SAAS,CAAC,OAAS,IAAI;gBAAC;YAAI;IAChC,CAAC"}},
+    {"offset": {"line": 34, "column": 0}, "map": {"version":3,"sources":["file:///Users/nick/Desktop/Aayeshol/apps/web/src/app/dashboard/page.tsx"],"sourcesContent":["\n\nimport { useAuthStore } from \"@/modules/auth/store/store.auth\"\n\nexport default function Dashboard() {\n  \n  const {user} = useAuthStore()\n\n  return (\n    <div className=\"w-full h-screen bg-black\">\n      {user?.name}\n    </div>\n  )\n}\n"],"names":[],"mappings":";;;;;AAEA;;;AAEe,SAAS;IAEtB,MAAM,EAAC,IAAI,EAAC,GAAG,IAAA,+KAAY;IAE3B,qBACE,+YAAC;QAAI,WAAU;kBACZ,MAAM;;;;;;AAGb"}}]
+}
