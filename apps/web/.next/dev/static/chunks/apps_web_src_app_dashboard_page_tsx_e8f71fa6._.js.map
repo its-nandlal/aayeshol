@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/nick/Desktop/Aayeshol/apps/web/src/app/dashboard/page.tsx"],"sourcesContent":["\"use client\"\n\nimport { useAuthStore } from \"@/modules/auth/store/store.auth\"\n\nexport default function Dashboard() {\n  \n  const {user} = useAuthStore()\n\n  return (\n    <div className=\"w-full h-screen bg-black\">\n      {user?.name}\n    </div>\n  )\n}\n"],"names":[],"mappings":";;;;;AAEA;;;AAFA;;AAIe,SAAS;;IAEtB,MAAM,EAAC,IAAI,EAAC,GAAG,IAAA,kLAAY;IAE3B,qBACE,8VAAC;QAAI,WAAU;kBACZ,MAAM;;;;;;AAGb;GATwB;;QAEP,kLAAY;;;KAFL"}}]
+}
