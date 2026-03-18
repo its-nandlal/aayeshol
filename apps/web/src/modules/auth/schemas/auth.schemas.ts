@@ -9,18 +9,18 @@ export const signUpUserSchema = z
       .string()
       .trim()
       .min(2, { message: "Name must be at least 2 characters" })
-      .max(50, { message: "Name cannot exceed 50 characters" })
-      .regex(/^[a-zA-Z\s'-]+$/, {
-        message: "Name can only contain letters, spaces, hyphens, and apostrophes",
-      }),
+      .max(10, { message: "Name cannot exceed 50 characters" }),
+      // .regex(/^[a-zA-Z\s'-]+$/, {
+      //   message: "Name can only contain letters, spaces, hyphens, and apostrophes",
+      // }),
 
     lastname: z
       .string()
       .trim()
-      .max(50, { message: "Last name cannot exceed 50 characters" })
-      .regex(/^[a-zA-Z\s'-]*$/, {
-        message: "Last name can only contain letters, spaces, hyphens, and apostrophes",
-      })
+      .max(10, { message: "Last name cannot exceed 50 characters" })
+      // .regex(/^[a-zA-Z\s'-]*$/, {
+      //   message: "Last name can only contain letters, spaces, hyphens, and apostrophes",
+      // })
       .optional(),
 
     email: z
@@ -28,7 +28,7 @@ export const signUpUserSchema = z
       .trim()
       .toLowerCase()
       .email({ message: "Please enter a valid email address" })
-      .max(255, { message: "Email cannot exceed 255 characters" }),
+      .max(30, { message: "Email cannot exceed 255 characters" }),
 
     password: z
       .string()

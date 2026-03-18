@@ -32,6 +32,7 @@ export default function FormAuth() {
       lastname: "",
       email: "",
       password: "",
+      confirmPassword:"",
     },
     mode: "onChange",
     reValidateMode: "onChange",
@@ -118,6 +119,17 @@ export default function FormAuth() {
             placeholder="••••••••"
             autoComplete={isRegister ? "new-password" : "current-password"}
           />
+
+          {isRegister && (            
+            <FormInput
+              control={form.control}
+              name="confirmPassword"
+              type="password"
+              label="Confirm Password"
+              placeholder="••••••••"
+              autoComplete="confirmPassword"
+            />
+          )}
 
           {/* PrimaryButton disabled handling (prop न हो तो class से) */}
           <PrimaryButton
