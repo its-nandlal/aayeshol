@@ -1,10 +1,1525 @@
 self.__BUILD_MANIFEST = {
-  "/_error": [
-    "static/chunks/pages/_error.js"
-  ],
   "__rewrites": {
     "afterFiles": [],
     "beforeFiles": [
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/dashboard(?:/.*)?"
+          }
+        ],
+        "source": "/dashboard/settings",
+        "destination": "/dashboard/(.)settings"
+      },
       {
         "has": [
           {
