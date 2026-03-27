@@ -23,37 +23,38 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, [data])
 
   // ✅ Redirect logic
-  useEffect(() => {
-    if (isPending) return
+  // useEffect(() => {
+  //   if (isPending) return
 
-    // Not logged in
-    if (!user) {
-      if (pathname.startsWith("/dashboard") || pathname.startsWith("/admin")) {
-        router.replace("/") // home
-      }
-      return
-    }
+  //   // Not logged in
+  //   if (!user) {
+  //     if (pathname.startsWith("/dashboard") || pathname.startsWith("/admin")) {
+  //       console.log(user)
+  //       router.replace("/") // home
+  //     }
+  //     return
+  //   }
 
-    // Logged in user on public page
-    if (pathname === "/" || pathname.startsWith("/auth")) {
-      if (user.role === "ADMIN") {
-        router.replace("/admin/dashboard")
-      } else if (user.role === "USER" || user.role === "PREMIUM") {
-        router.replace("/dashboard")
-      }
-      return
-    }
+  //   // Logged in user on public page
+  //   if (pathname === "/" || pathname.startsWith("/auth")) {
+  //     if (user.role === "ADMIN") {
+  //       router.replace("/admin/dashboard")
+  //     } else if (user.role === "USER" || user.role === "PREMIUM") {
+  //       router.replace("/dashboard")
+  //     }
+  //     return
+  //   }
 
-    // Wrong role access
-    if (pathname.startsWith("/admin") && user.role !== "ADMIN") {
-      router.replace("/dashboard")
-    }
+  //   // Wrong role access
+  //   if (pathname.startsWith("/admin") && user.role !== "ADMIN") {
+  //     router.replace("/dashboard")
+  //   }
 
-    if (pathname.startsWith("/dashboard") && user.role === "ADMIN") {
-      router.replace("/admin/dashboard")
-    }
+  //   if (pathname.startsWith("/dashboard") && user.role === "ADMIN") {
+  //     router.replace("/admin/dashboard")
+  //   }
 
-  }, [user, pathname, isPending])
+  // }, [user, pathname, isPending])
 
   return children
 }

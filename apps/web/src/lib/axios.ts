@@ -1,9 +1,8 @@
 import axios from "axios";
-import { env } from "process";
 import { toast } from "sonner";
 
 export const api = axios.create({
-  baseURL: env.NODE_ENV || "http://localhost:3001",
+  baseURL: process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001/api",
   headers: {
     "Content-Type": "application/json",
   },
@@ -21,7 +20,7 @@ api.interceptors.response.use(
 
       // redirect to login
       if (typeof window !== "undefined") {
-        window.location.href = "/login";
+        // window.location.href = "/auth";
       }
     }
 

@@ -13,7 +13,7 @@ export const createAuth = (prisma: PrismaService) =>
       provider: 'postgresql',
     }),
 
-    trustedOrigins: ['http://localhost:3000', 'http://localhost:3001'],
+    trustedOrigins: [process.env.FRONTEND_URL || 'http://localhost:3000'],
 
     user: {
       additionalFields: {

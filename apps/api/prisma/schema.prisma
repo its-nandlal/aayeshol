@@ -27,6 +27,8 @@ model User {
   sessions      Session[]
   accounts      Account[]
 
+  socialAccount SocialAccount[]
+
   @@map("user")
 }
 
@@ -76,4 +78,24 @@ model Verification {
 
   @@index([identifier])
   @@map("verification")
+}
+
+
+model SocialAccount {
+  id                String   @id @default(cuid())
+  provider          String   // "linkedin", "instagram", etc.
+  providerAccountId String   // LinkedIn ka user ID
+  accessToken       String
+
+  name              String?
+  email             String?
+  image             String?
+
+  
+  userId            String
+  createdAt         DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@unique([userId, provider]) // ek user ek provider se sirf ek baar connect
 }
