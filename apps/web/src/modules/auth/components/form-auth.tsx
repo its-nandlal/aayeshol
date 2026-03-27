@@ -17,7 +17,7 @@ import {
   signInUserSchema,
   SignUpInput,
   SignInInput,
-} from "../schemas/auth.schemas"; // path adjust कर लो
+} from "../schemas/auth.schema"; // path adjust कर लो
 
 export default function FormAuth() {
   const [isRegister, setIsRegister] = useState<boolean>(true);

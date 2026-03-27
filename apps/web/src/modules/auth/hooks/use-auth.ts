@@ -8,12 +8,12 @@ import { SignupResponse, SigninResponse } from "@/../../../Aayeshol/packages/typ
 // ======== API Functions ========
 
 async function signUpApi(formData: FormData): Promise<SignupResponse> {
-  const { data } = await api.post("/api/auth/sign-up/email", formData);
+  const { data } = await api.post("/auth/sign-up/email", formData);
   return data;
 }
 
 async function signInApi(formData: FormData): Promise<SigninResponse> {
-  const { data } = await api.post("/api/auth/sign-in/email", formData);
+  const { data } = await api.post("/auth/sign-in/email", formData);
   return data;
 }
 
@@ -73,7 +73,7 @@ export const useLogout = () => {
   
     return useMutation({
       mutationFn: async () => {
-        await api.post("/api/auth/sign-out");
+        await api.post("/auth/sign-out");
         localStorage.removeItem("token");
       },
       onSuccess: () => {
@@ -95,7 +95,7 @@ export const useSession = () => {
     retryDelay: 1000 * 60 * 5,
     retry: false,                 // session fail पर retry मत करो
     refetchOnWindowFocus: false,  // window focus पर मत refetch
-  refetchOnMount: false,
+    refetchOnMount: false,
 
     // enabled: !!localStorage.getItem("token"), // optional: token हो तभी run
   });

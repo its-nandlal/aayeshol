@@ -1,4 +1,3 @@
-
 services:
 
   web:
@@ -9,6 +8,8 @@ services:
       - "3000:3000"
     depends_on:
       - api
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:3001
     networks:
       - aayes
 
@@ -18,26 +19,15 @@ services:
       dockerfile: docker/api.Dockerfile
     ports:
       - "3001:3001"
-    depends_on:
-      - postgres
-      - redis
-    networks:
-      - aayes
-
-  postgres:
-    image: postgres:15
-    container_name: aayes_postgres
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: aayeshol
-    ports:
-      - "5432:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - BETTER_AUTH_URL=http://localhost:3001
+      - FRONTEND_URL=http://localhost:3000
+      - DATABASE_URL=postgresql://neondb_owner:npg_gxHbv24BafVi@ep-lucky-wind-a1y6e4h7-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
+      - BETTER_AUTH_SECRET=UxKg6aXEH5SuVIkX3lbRePzHByZhDeUS
     networks:
       - aayes
 
+  # 🔴 Redis optional (future use)
   redis:
     image: redis:7
     container_name: aayes_redis
@@ -45,9 +35,6 @@ services:
       - "6379:6379"
     networks:
       - aayes
-
-volumes:
-  postgres_data:
 
 networks:
   aayes:
