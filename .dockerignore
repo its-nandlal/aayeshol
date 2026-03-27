@@ -28,3 +28,8 @@ out/
 # Optional: temporary files
 *.tgz
 *.zip
+
+
+Dockerfile
+docker-compose.yml
+.next
