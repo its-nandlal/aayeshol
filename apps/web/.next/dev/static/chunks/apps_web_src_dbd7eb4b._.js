@@ -400,36 +400,42 @@ function AuthProvider({ children }) {
         data
     ]);
     // ✅ Redirect logic
-    // useEffect(() => {
-    //   if (isPending) return
-    //   // Not logged in
-    //   if (!user) {
-    //     if (pathname.startsWith("/dashboard") || pathname.startsWith("/admin")) {
-    //       console.log(user)
-    //       router.replace("/") // home
-    //     }
-    //     return
-    //   }
-    //   // Logged in user on public page
-    //   if (pathname === "/" || pathname.startsWith("/auth")) {
-    //     if (user.role === "ADMIN") {
-    //       router.replace("/admin/dashboard")
-    //     } else if (user.role === "USER" || user.role === "PREMIUM") {
-    //       router.replace("/dashboard")
-    //     }
-    //     return
-    //   }
-    //   // Wrong role access
-    //   if (pathname.startsWith("/admin") && user.role !== "ADMIN") {
-    //     router.replace("/dashboard")
-    //   }
-    //   if (pathname.startsWith("/dashboard") && user.role === "ADMIN") {
-    //     router.replace("/admin/dashboard")
-    //   }
-    // }, [user, pathname, isPending])
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$29$2e$0_react$2d$dom$40$19$2e$2$2e$3_react$40$19$2e$2$2e$3_$5f$react$40$19$2e$2$2e$3$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "AuthProvider.useEffect": ()=>{
+            if (isPending) return;
+            // Not logged in
+            if (!user) {
+                if (pathname.startsWith("/dashboard") || pathname.startsWith("/admin")) {
+                    console.log(user);
+                    router.replace("/"); // home
+                }
+                return;
+            }
+            // Logged in user on public page
+            if (pathname === "/" || pathname.startsWith("/auth")) {
+                if (user.role === "ADMIN") {
+                    router.replace("/admin/dashboard");
+                } else if (user.role === "USER" || user.role === "PREMIUM") {
+                    router.replace("/dashboard");
+                }
+                return;
+            }
+            // Wrong role access
+            if (pathname.startsWith("/admin") && user.role !== "ADMIN") {
+                router.replace("/dashboard");
+            }
+            if (pathname.startsWith("/dashboard") && user.role === "ADMIN") {
+                router.replace("/admin/dashboard");
+            }
+        }
+    }["AuthProvider.useEffect"], [
+        user,
+        pathname,
+        isPending
+    ]);
     return children;
 }
-_s(AuthProvider, "Q4LWYg9l+zOA/A+3Y/vi/kyIU7o=", false, function() {
+_s(AuthProvider, "OFTrXoI/RORmtFU7sH+NBlNOQCw=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$web$2f$src$2f$modules$2f$auth$2f$hooks$2f$use$2d$auth$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSession"],
         __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$web$2f$src$2f$modules$2f$auth$2f$store$2f$store$2e$auth$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useAuthStore"],
