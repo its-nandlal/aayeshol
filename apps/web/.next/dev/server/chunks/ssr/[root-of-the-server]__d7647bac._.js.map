@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///Users/nick/Desktop/Aayeshol/apps/web/src/app/dashboard/page.tsx"],"sourcesContent":["// app/dashboard/page.tsx\n\nimport { cookies } from \"next/headers\";\nimport { redirect } from \"next/navigation\";\n\nexport default function Page() {\n  const cookieStore = cookies();\n  const session = cookieStore.get(\"better-auth.session_token\");\n\n  if (!session) {\n    redirect(\"/\");\n  }\n\n  return <div>Dashboard</div>;\n}"],"names":[],"mappings":";;;;;AAAA,yBAAyB;AAEzB;AACA;AAAA;;;;AAEe,SAAS;IACtB,MAAM,cAAc,IAAA,2SAAO;IAC3B,MAAM,UAAU,YAAY,GAAG,CAAC;IAEhC,IAAI,CAAC,SAAS;QACZ,IAAA,kWAAQ,EAAC;IACX;IAEA,qBAAO,+YAAC;kBAAI;;;;;;AACd"}}]
-}

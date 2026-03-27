@@ -48,7 +48,7 @@ export default function UserInfo({ panel }: { panel: boolean }) {
         paddingRight: panel ? 8 : 0,
       }}
       transition={SPRING}
-      className="relative w-full flex items-center gap-3 pt-5"
+      className=" relative w-full flex items-center gap-3 pt-5"
     >
       <AnimatePresence>
         {selected && user && (
@@ -56,7 +56,7 @@ export default function UserInfo({ panel }: { panel: boolean }) {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            className="fixed -right-10 top-2/3 z-10 bg-black/50 backdrop-blur-md"
+            className="fixed left-64 top-2/3 z-10 bg-black/50 backdrop-blur-md"
           >
             <motion.div
               ref={ref}
@@ -139,7 +139,9 @@ export default function UserInfo({ panel }: { panel: boolean }) {
                 </div>
 
                 <Link href={"/dashboard/settings"}>
-                <PrimaryButton className=" brightness-65 shadow-indigo-700 hover:via-5% hover:to-60% rounded-full">
+                <PrimaryButton 
+                onClick={handleClose}
+                className=" brightness-65 shadow-indigo-700 hover:via-5% hover:to-60% rounded-full">
                   Settings
                 </PrimaryButton>
                 </Link>

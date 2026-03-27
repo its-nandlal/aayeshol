@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///Users/nick/Desktop/Aayeshol/apps/web/src/app/auth/page.tsx"],"sourcesContent":["import Noise from \"@/../public/noise.jpg\"\nimport Image from \"next/image\"\n\nexport default function Auth() {\n  return (\n    <section className=\"relative z-2 w-full max-h-screen h-screen \n    bg-black\n    grid grid-cols-2 gap-10 p-4\n    overflow-hidden\">\n\n\n\n        <div className=\" relative w-full h-full\">\n         {/* bg */}\n         <div className=\" absolute inset-0 bg-linear-to-tl from-indigo-800 from-0% via-purple-900 via-10% to-blue-950 to-100%\">\n            <Image\n            src={n}/>\n         </div>\n        </div>        \n        <div className=\"w-full h-full\"></div>        \n\n    </section>\n  )\n}\n"],"names":[],"mappings":";;;;;AACA;;;AAEe,SAAS;IACtB,qBACE,+YAAC;QAAQ,WAAU;;0BAOf,+YAAC;gBAAI,WAAU;0BAEd,cAAA,+YAAC;oBAAI,WAAU;8BACZ,cAAA,+YAAC,ySAAK;wBACN,KAAK;;;;;;;;;;;;;;;;0BAGT,+YAAC;gBAAI,WAAU;;;;;;;;;;;;AAIvB"}}]
-}

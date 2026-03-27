@@ -27,7 +27,7 @@ const Tiptap = forwardRef<TiptapRef, TiptapProps>(({ onChange }, ref) => {
   
   const editor = useEditor({
     extensions: [StarterKit],
-    content: content || "",
+    content: content || "Enter post conent",
     immediatelyRender: false,
     onUpdate: ({ editor }) => {
       onChange?.(editor.getHTML());

@@ -14,62 +14,31 @@ export default function NewPostPage() {
   const [content, setContent] = useState("");
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
 
-  // Common emojis list
   const EMOJIS = [
-    "😀",
-    "😂",
-    "🥹",
-    "😍",
-    "🤩",
-    "😎",
-    "🥳",
-    "😅",
-    "🙏",
-    "👏",
-    "🔥",
-    "💯",
-    "✨",
-    "🎉",
-    "💡",
-    "🚀",
-    "💪",
-    "❤️",
-    "👀",
-    "🎯",
+    "😀","😂","🥹","😍","🤩","😎","🥳","😅","🙏","👏",
+    "🔥","💯","✨","🎉","💡","🚀","💪","❤️","👀","🎯",
   ];
 
   const charCount = content.replace(/<[^>]*>/g, "").length;
-
   const ref = useOutsideClick(() => setShowEmojiPicker(false));
 
-  const insertBold = () => {
-    tiptapRef.current?.editor?.chain().focus().toggleBold().run();
-  }
-
-  const insertItalic = () => {
-    tiptapRef.current?.editor?.chain().focus().toggleItalic().run();
-  }
-
-  const insertHashtag = () => {
-    tiptapRef.current?.editor?.chain().focus().insertContent(" #").run();
-  };
-
-  const insertMention = () => {
-    tiptapRef.current?.editor?.chain().focus().insertContent(" @").run();
-  };
-
+  const insertBold = () => tiptapRef.current?.editor?.chain().focus().toggleBold().run();
+  const insertItalic = () => tiptapRef.current?.editor?.chain().focus().toggleItalic().run();
+  const insertHashtag = () => tiptapRef.current?.editor?.chain().focus().insertContent(" #").run();
+  const insertMention = () => tiptapRef.current?.editor?.chain().focus().insertContent(" @").run();
   const insertEmoji = (emoji: string) => {
     tiptapRef.current?.editor?.chain().focus().insertContent(emoji).run();
     setShowEmojiPicker(false);
   };
-
   const clearContent = () => {
     tiptapRef.current?.editor?.commands.clearContent();
     setContent("");
   };
 
+  const toolbarBtnClass = "p-3 rounded-lg bg-indigo-800/30 text-indigo-300/40 hover:text-indigo-200/80 hover:bg-indigo-500/30 transition-all cursor-pointer";
+
   return (
-    <section className="w-full h-full ">
+    <section className="w-full h-full">
       <Header
         heading="Create New Post"
         actions={[{ label: "Drafts", icon: "Clock", href: "/dashboard/posts" }]}
@@ -77,75 +46,58 @@ export default function NewPostPage() {
 
       <div className="p-4">
         <div className="mx-auto">
-          <div
-            className="relative h-full"
-          >
+          <div className="relative h-full">
+
             {/* Main Editor Card */}
-            <div className="relative h-[88vh] bg-slate-950/60 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden">
-              {/* Editor Header */}
-              <div className="flex items-center justify-between px-4 py-3 border-b border-white/10">
-                <div className="flex items-center gap-2 px-3 py-1.5 bg-white/5 rounded-lg border border-white/10">
+            <div className="relative h-[88vh] bg-linear-to-tl from-black to-indigo-950/60 rounded-2xl border border-indigo-900/30 overflow-hidden">
+
+              {/* Top Header */}
+              <div className="flex items-center justify-between px-4 py-3 border-b border-indigo-900/30 bg-black/40">
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-indigo-950/50 rounded-lg border border-indigo-800/30">
                   <Type className="w-4 h-4 text-indigo-400" />
-                  <span className="text-sm text-white/70">New Post</span>
+                  <span className="text-sm text-indigo-200/60">New Post</span>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <span className="text-sm text-white/40">
+                  <span className="text-sm text-indigo-300/40">
                     {charCount} chars
                   </span>
-                  <button className="group p-2 bg-linear-to-tl from-pink-600/60 to-indigo-600/60 backdrop-blur-md border border-slate-600/60 rounded-lg hover:from-pink-600/80 hover:to-indigo-600/80 ease-in-out duration-300 cursor-pointer">
+                  <button className="group p-2 bg-linear-to-tl from-pink-600/60 to-indigo-600/60 border border-indigo-500/30 rounded-lg hover:from-pink-600/80 hover:to-indigo-600/80 ease-in-out duration-300 cursor-pointer">
                     <Sparkles className="w-5 h-5 text-white/80 group-hover:text-white/95" />
                   </button>
                 </div>
               </div>
 
-              {/* Tiptap Editor — onChange se content update hota hai */}
-              <div className="w-full h-full grid grid-cols-2 gap-2">
-                <div className="relative w-full">
-                  
-                  {/* Top actions */}
-                  <div className="flex items-center justify-between px-4 py-3 border-b border-white/10 bg-slate-950/50">
+              {/* Two Column Layout */}
+              <div className="w-full h-full grid grid-cols-2 gap-0 overflow-hidden">
+
+                {/* Left — Editor */}
+                <div className="relative w-full h-full overflow-hidden border-r border-indigo-900/30">
+
+                  {/* Toolbar */}
+                  <div className="flex items-center justify-between px-4 py-3 border-b border-indigo-900/30 bg-indigo-950/30">
                     <div className="flex items-center gap-1">
-                      <Button
-                        onClick={insertBold}
-                        title="Insert hashtag"
-                        className="p-3 rounded-lg text-white/40 hover:text-white/70 hover:bg-white/5 transition-all cursor-pointer"
-                      >
-                        <Bold className="w-5 h-5 text-bold" />
+                      <Button onClick={insertBold} title="Bold" className={toolbarBtnClass}>
+                        <Bold className="w-5 h-5" />
                       </Button>
-
-                      <Button
-                        onClick={insertItalic}
-                        title="Insert hashtag"
-                        className="p-3 rounded-lg text-white/40 hover:text-white/70 hover:bg-white/5 transition-all cursor-pointer"
-                      >
-                        <Italic className="w-5 h-5 text-bold" />
+                      <Button onClick={insertItalic} title="Italic" className={toolbarBtnClass}>
+                        <Italic className="w-5 h-5" />
                       </Button>
-
-                      <Button
-                        onClick={insertHashtag}
-                        title="Insert hashtag"
-                        className="p-3 rounded-lg text-white/40 hover:text-white/70 hover:bg-white/5 transition-all cursor-pointer"
-                      >
+                      <Button onClick={insertHashtag} title="Hashtag" className={toolbarBtnClass}>
                         <Hash className="w-5 h-5" />
                       </Button>
-
-                      <Button
-                        onClick={insertMention}
-                        title="Insert mention"
-                        className="p-3 rounded-lg text-white/40 hover:text-white/70 hover:bg-white/5 transition-all cursor-pointer"
-                      >
+                      <Button onClick={insertMention} title="Mention" className={toolbarBtnClass}>
                         <AtSign className="w-5 h-5" />
                       </Button>
-
                       <Button
                         onClick={() => setShowEmojiPicker((v) => !v)}
-                        title="Insert emoji"
-                        className="p-3 rounded-lg text-white/40 hover:text-white/70 hover:bg-white/5 transition-all cursor-pointer"
+                        title="Emoji"
+                        className={toolbarBtnClass}
                       >
                         <Smile className="w-5 h-5" />
                       </Button>
 
+                      {/* Emoji Picker */}
                       {showEmojiPicker && (
                         <motion.div
                           ref={ref}
@@ -153,15 +105,13 @@ export default function NewPostPage() {
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ y: 8, scale: 0.95, opacity: 0 }}
                           transition={{ duration: 0.15 }}
-                          className="absolute top-20 left-0 z-50 p-3 bg-slate-900 border border-white/10 rounded-2xl shadow-2xl"
+                          className="absolute top-20 left-0 z-50 p-3 bg-indigo-950 border border-indigo-800/40 rounded-2xl shadow-2xl shadow-indigo-950/50"
                         >
                           <div className="flex items-center justify-between mb-2 px-1">
-                            <span className="text-xs text-white/40">
-                              Emojis
-                            </span>
+                            <span className="text-xs text-indigo-300/40">Emojis</span>
                             <button
                               onClick={() => setShowEmojiPicker(false)}
-                              className="text-white/30 hover:text-white/60 transition-colors"
+                              className="text-indigo-300/30 hover:text-indigo-200/60 transition-colors"
                             >
                               <X className="w-3.5 h-3.5" />
                             </button>
@@ -171,7 +121,7 @@ export default function NewPostPage() {
                               <button
                                 key={emoji}
                                 onClick={() => insertEmoji(emoji)}
-                                className="w-9 h-9 flex items-center justify-center text-xl rounded-lg hover:bg-white/10 transition-colors cursor-pointer"
+                                className="w-9 h-9 flex items-center justify-center text-xl rounded-lg hover:bg-indigo-800/30 transition-colors cursor-pointer"
                               >
                                 {emoji}
                               </button>
@@ -182,16 +132,15 @@ export default function NewPostPage() {
                     </div>
 
                     <div className="flex items-center gap-3">
-                      {/* Clear — editor ka content reset karna alag handle hoga */}
                       <Button
                         onClick={clearContent}
-                        className="px-4 py-2 text-sm text-white/50 hover:text-white/80 transition-colors"
+                        className="px-4 py-2 bg-linear-to-tl from-black via-red-900 to-red-700 text-sm text-white/70 hover:text-white/90 transition-colors cursor-pointer"
                       >
                         Clear
                       </Button>
                       <Button
                         onClick={() => console.log("Post HTML:", content)}
-                        className="flex items-center gap-2 px-6 py-2.5 bg-white text-black rounded-lg font-medium hover:bg-white/90 transition-all"
+                        className="flex items-center gap-2 px-6 py-2.5 bg-linear-to-tl from-black via-indigo-800 to-indigo-700 hover:bg-indigo-500 text-white rounded-lg font-medium transition-all cursor-pointer"
                       >
                         <Send className="w-4 h-4" />
                         Post
@@ -199,17 +148,19 @@ export default function NewPostPage() {
                     </div>
                   </div>
 
-                  <div className="p-4 h-full">
-                    <Tiptap
-                      ref={tiptapRef}
-                      onChange={(html) => setContent(html)}
-                    />
+                  {/* Editor Area */}
+                  <div className="p-4 h-[calc(100%-56px)] bg-black/70 overflow-y-auto"
+                  >
+                    <Tiptap ref={tiptapRef} onChange={(html) => setContent(html)} />
                   </div>
                 </div>
 
-                <AiRequest />
-              </div>
+                {/* Right — AI Panel */}
+                <div className="h-full overflow-hidden bg-indigo-950/20">
+                  <AiRequest />
+                </div>
 
+              </div>
             </div>
           </div>
         </div>

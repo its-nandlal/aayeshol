@@ -28,7 +28,7 @@ export default function FormTextarea<T extends string = string>({
       name={name}
       render={({ field }) => (
         <FormItem className="space-y-2">
-          <FormLabel className="font-funnel-sans text-sm font-medium text-zinc-300">
+          <FormLabel className="font-funnel-sans text-sm font-medium text-indigo-200">
             {lable} {required && <span className="text-red-500 ml-1">*</span>}
           </FormLabel>
 
@@ -42,16 +42,14 @@ export default function FormTextarea<T extends string = string>({
                 max-h-52
                 mt-1.5
                 rounded
-                bg-zinc-900/70
-                border border-zinc-700
-                text-zinc-200
-                placeholder:text-zinc-500!
+                bg-indigo-900/20
+                border border-indigo-950
+                text-indigo-200/90
+                placeholder:text-indigo-300!
                 backdrop-blur-sm!
-
 
                 focus:border-purple-400/40!
                 focus:outline-purple-400/40!
-                // focus:ring-2!
                 focus:ring-neutral-400/20!
 
                 transition-all

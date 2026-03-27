@@ -15,25 +15,24 @@ import {
   useSocialAccounts,
   useLinkedInCallback,
 } from "../hooks/user-connect-account";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, LayoutGroup } from "motion/react";
 import { useEffect, useRef, useState, useCallback } from "react";
 import Image from "next/image";
 
-// ======== Outside Click Hook ========
 const useOutsideClick = (callback: () => void) => {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     function handleClick(event: MouseEvent) {
       if (!ref.current) return;
-      if (!ref.current.contains(event.target as Node)) {
-        callback();
-      }
+      if (!ref.current.contains(event.target as Node)) callback();
     }
     document.addEventListener("mousedown", handleClick);
     return () => document.removeEventListener("mousedown", handleClick);
   }, [callback]);
   return ref;
 };
+
+const SPRING = { type: "spring", stiffness: 300, damping: 30 } as const;
 
 export default function ConnectAccounts() {
   const { data: accounts, isLoading } = useSocialAccounts();
@@ -45,10 +44,11 @@ export default function ConnectAccounts() {
   const handleClose = useCallback(() => setSelected(null), []);
   const ref = useOutsideClick(handleClose);
 
-  // Background scroll lock
   useEffect(() => {
     document.body.style.overflow = selected ? "hidden" : "auto";
-    return () => { document.body.style.overflow = "auto"; };
+    return () => {
+      document.body.style.overflow = "auto";
+    };
   }, [selected]);
 
   const ACCOUNTS = [
@@ -57,9 +57,15 @@ export default function ConnectAccounts() {
       icon: Linkedin,
       provider: "linkedin" as const,
       connected: accounts?.linkedin.connected ?? false,
-      connectedName: accounts?.linkedin.connected ? accounts.linkedin.name : null,
-      connectedEmail: accounts?.linkedin.connected ? accounts.linkedin.email : null,
-      connectedImage: accounts?.linkedin.connected ? accounts.linkedin.image : null,
+      connectedName: accounts?.linkedin.connected
+        ? accounts.linkedin.name
+        : null,
+      connectedEmail: accounts?.linkedin.connected
+        ? accounts.linkedin.email
+        : null,
+      connectedImage: accounts?.linkedin.connected
+        ? accounts.linkedin.image
+        : null,
       color: "#0A66C2",
       bgColor: "rgba(10,102,194,0.15)",
       onConnect: connect,
@@ -107,210 +113,290 @@ export default function ConnectAccounts() {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <div className="relative w-full">
-
-      {/* ======== Expanded Modal ======== */}
-      <AnimatePresence>
-        {selected && selectedAccount && (
-          <>
-            {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-10 bg-black/50 backdrop-blur-md"
-            />
-
-            {/* Modal Card */}
-            <motion.div
-              ref={ref}
-              layoutId={`card-${selectedAccount.provider}`}
-              transition={{ type: "spring", stiffness: 120, damping: 20 }}
-              className="fixed inset-0 z-20 m-auto h-fit w-80 rounded-2xl border border-slate-700 bg-slate-900 p-6 shadow-2xl"
-            >
-              {/* Close Button */}
-              <button
-                onClick={handleClose}
-                className="absolute top-4 right-4 text-slate-400 hover:text-red-500 transition cursor-pointer"
-              >
-                <X size={16} />
-              </button>
-
-              {/* Icon */}
-
-                <motion.div
-                layoutId={`icon-${selectedAccount.provider}`}
-                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4"
-                style={{ backgroundColor: selectedAccount.bgColor }}
-              >
-                <selectedAccount.icon size={26} style={{ color: selectedAccount.color }} />
-                </motion.div>
-              
-
-              {/* Details — staggered */}
+    // 1. LayoutGroup — sabhi layoutId ko ek scope mein baandho
+    <LayoutGroup>
+      <div className="relative w-full">
+        {/* ======== Modal ======== */}
+        <AnimatePresence>
+          {selected && selectedAccount && (
+            <>
+              {/* Backdrop */}
               <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 10 }}
-                transition={{ delay: 0.15 }}
-                className="flex items-center gap-4 space-y-4 mt-2"
-              >
-                {/* Profile Image */}
-                {selectedAccount.connectedImage && (
-                  <Image
-                    src={selectedAccount.connectedImage}
-                    alt={selectedAccount.connectedName ?? ""}
-                    width={100}
-                    height={100}
-                    className="w-16 h-16 rounded-full object-cover bg-red-800 border-2 border-slate-700"
-                  />
-                )}
-                
-
-                <div className="space-y-2 border-l border-slate-700/60 pl-4">
-                {/* Name */}
-                {selectedAccount.connectedName && (
-                  <div>
-                    <p className="text-xs text-slate-500 mb-0.5">Name</p>
-                    <p className="text-sm font-semibold text-white">
-                      {selectedAccount.connectedName}
-                    </p>
-                  </div>
-                )}
-
-                {/* Email */}
-                {selectedAccount.connectedEmail && (
-                  <div>
-                    <p className="text-xs text-slate-500 mb-0.5">Email</p>
-                    <p className="text-sm text-slate-300">
-                      {selectedAccount.connectedEmail}
-                    </p>
-                  </div>
-                )}
-
-                {/* Connected Badge */}
-                <div className="flex items-center gap-2 pt-1">
-                  <span
-                    className="w-2 h-2 rounded-full"
-                    style={{ backgroundColor: "#4ade80", boxShadow: "0 0 6px #4ade80" }}
-                  />
-                  <span className="text-xs text-green-400 font-medium">Account Connected</span>
-                </div>
-                </div>
-
-
-              </motion.div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
-
-      {/* ======== Cards Grid ======== */}
-      <div className={cn(
-        "w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 p-6 transition duration-300",
-        selected && "blur-sm scale-95"
-      )}>
-        {ACCOUNTS.map((account) => {
-          const Icon = account.icon;
-          const isConnected = account.connected;
-
-          return (
-            <motion.div
-              key={account.provider}
-              layoutId={`card-${account.provider}`}
-              onClick={() => isConnected ? setSelected(account.provider) : null}
-              transition={{ type: "spring", stiffness: 120, damping: 20 }}
-              className={cn(
-                "relative flex flex-col gap-5 p-5 rounded-2xl",
-                "border transition-colors duration-300",
-                "bg-linear-to-tl from-indigo-800/20 to-blue-800/20 backdrop-blur-2xl",
-                isConnected
-                  ? "border-slate-700/80 cursor-pointer"
-                  : "border-slate-800/60 hover:border-slate-700/60"
-              )}
-              style={{
-                boxShadow: isConnected
-                  ? `0 0 0 1px ${account.color}22, inset 0 0 30px ${account.color}08`
-                  : "none",
-              }}
-            >
-              {/* Green dot */}
-              {isConnected && (
-                <span
-                  className="absolute top-4 right-4 w-2 h-2 rounded-full"
-                  style={{ backgroundColor: "#4ade80", boxShadow: "0 0 6px #4ade80" }}
-                />
-              )}
-
-              {/* Icon + Label */}
-              <div className="flex items-center gap-3">
-                <motion.div
-                  layoutId={`icon-${account.provider}`}
-                  className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
-                  style={{ backgroundColor: account.bgColor }}
-                >
-                  <Icon size={22} style={{ color: account.color }} />
-                </motion.div>
-                <div>
-                  <motion.p
-                    layoutId={`label-${account.provider}`}
-                    className="text-sm font-semibold text-white"
-                  >
-                    {account.label}
-                  </motion.p>
-                  <p className="text-xs text-slate-500 mt-0.5">
-                    {isConnected && account.connectedName
-                      ? account.connectedName
-                      : isConnected
-                      ? "Connected"
-                      : "Not connected"}
-                  </p>
-                </div>
-              </div>
-
-              {/* Divider */}
-              <div
-                className={cn("h-px w-full rounded-full", isConnected ? "opacity-40" : "opacity-10")}
-                style={{ backgroundColor: account.color }}
+                key="backdrop"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="fixed inset-0 z-10 bg-black/40"
+                onClick={handleClose}
               />
 
-              {/* CTA Button */}
-              <button
-                onClick={(e) => {
-                  e.stopPropagation(); // card click se alag
-                  account.onConnect?.();
-                }}
-                disabled={isConnected || !account.onConnect}
-                className={cn(
-                  "flex items-center justify-between w-full px-4 py-2.5 rounded-xl text-xs font-medium",
-                  "border transition-all duration-200",
-                  isConnected || !account.onConnect
-                    ? "bg-transparent border-slate-800 text-slate-500 cursor-default"
-                    : "border-slate-700/60 text-slate-300 cursor-pointer hover:text-white hover:border-slate-600 hover:bg-slate-800/40"
-                )}
+              {/* 2. Modal — layoutId card se match, layout prop zaroori */}
+              {/* Modal Card */}
+              <motion.div
+                ref={ref}
+                key={`modal-${selectedAccount.provider}`}
+                layoutId={`card-${selectedAccount.provider}`}
+                layout
+                transition={SPRING}
+                className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-80 rounded-2xl border border-slate-700/80 bg-linear-to-b from-indigo-950 to-black shadow-2xl overflow-hidden"
               >
-                {isConnected ? (
-                  <>
-                    <span>View Details</span>
-                    <CheckCircle2 size={13} style={{ color: "#4ade80" }} />
-                  </>
-                ) : !account.onConnect ? (
-                  <>
-                    <span>Coming Soon</span>
-                    <ArrowRight size={13} />
-                  </>
-                ) : (
-                  <>
-                    <span>Connect</span>
-                    <ArrowRight size={13} />
-                  </>
+
+                <div className="p-6 flex flex-col items-center text-center gap-4">
+                  {/* Close */}
+                  <motion.button
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    onClick={handleClose}
+                    className="absolute top-4 right-4 text-slate-500 hover:text-red-400 transition cursor-pointer"
+                  >
+                    <X size={15} />
+                  </motion.button>
+
+                  {/* Profile Image ya Icon */}
+                  <motion.div
+                    layoutId={`icon-${selectedAccount.provider}`}
+                    layout
+                    transition={SPRING}
+                    className="relative"
+                  >
+                    {selectedAccount.connectedImage ? (
+                      <div className="relative">
+                        <Image
+                          src={selectedAccount.connectedImage}
+                          alt={selectedAccount.connectedName ?? ""}
+                          width={80}
+                          height={80}
+                          className="w-20 h-20 rounded-full object-cover border-2 border-indigo-200/60"
+                        />
+                        {/* Platform icon badge */}
+                        <div
+                          className={`absolute -bottom-1 -right-1 w-7 h-7 rounded-full flex items-center justify-center border-2 border-black backdrop-blur-sm`}
+                          style={{ backgroundColor: selectedAccount.bgColor }}
+                        >
+                          <selectedAccount.icon
+                            size={13}
+                            style={{ color: selectedAccount.color }}
+                          />
+                        </div>
+                      </div>
+                    ) : (
+                      <div
+                        className="w-20 h-20 rounded-full flex items-center justify-center"
+                        style={{ backgroundColor: selectedAccount.bgColor }}
+                      >
+                        <selectedAccount.icon
+                          size={32}
+                          style={{ color: selectedAccount.color }}
+                        />
+                      </div>
+                    )}
+                  </motion.div>
+
+                  {/* Name & Platform */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ delay: 0.12 }}
+                    className="flex flex-col items-center gap-1"
+                  >
+                    <p className="text-base font-semibold text-white">
+                      {selectedAccount.connectedName ?? selectedAccount.label}
+                    </p>
+                    {/* Platform badge */}
+                    <motion.span
+                    layoutId={`label-${selectedAccount.provider}`}
+                      className="text-[11px] px-2.5 py-0.5 rounded-full font-medium"
+                      style={{
+                        backgroundColor: selectedAccount.bgColor,
+                        color: selectedAccount.color,
+                      }}
+                    >
+                      {selectedAccount.label}
+                    </motion.span>
+                  </motion.div>
+
+                  {/* Divider */}
+                  <div className="w-full h-px bg-slate-800" />
+
+                  {/* Info rows */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ delay: 0.18 }}
+                    className="w-full space-y-3"
+                  >
+                    {selectedAccount.connectedEmail && (
+                      <div className="flex items-center justify-between px-3 py-2.5 rounded-xl bg-slate-900/60 border border-slate-800/60">
+                        <span className="text-xs text-slate-500">Email</span>
+                        <span className="text-xs text-slate-200">
+                          {selectedAccount.connectedEmail}
+                        </span>
+                      </div>
+                    )}
+
+                    <div className="flex items-center justify-between px-3 py-2.5 rounded-xl bg-slate-900/60 border border-slate-800/60">
+                      <span className="text-xs text-slate-500">Status</span>
+                      <div className="flex items-center gap-1.5">
+                        <span
+                          className="w-1.5 h-1.5 rounded-full"
+                          style={{
+                            backgroundColor: "#4ade80",
+                            boxShadow: "0 0 5px #4ade80",
+                          }}
+                        />
+                        <span className="text-xs text-green-400 font-medium">
+                          Connected
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center justify-between px-3 py-2.5 rounded-xl bg-slate-900/60 border border-slate-800/60">
+                      <span className="text-xs text-slate-500">Platform</span>
+                      <span className="text-xs text-slate-200">
+                        {selectedAccount.label}
+                      </span>
+                    </div>
+                  </motion.div>
+
+                  {/* Disconnect button */}
+                  <motion.button
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ delay: 0.22 }}
+                    className="w-full py-2 rounded-xl text-xs font-medium text-red-400 border border-red-900/40 hover:bg-red-950/30 transition cursor-pointer"
+                  >
+                    Disconnect Account
+                  </motion.button>
+                </div>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
+
+        {/* ======== Cards Grid ======== */}
+        <div
+          className={cn(
+            "w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 p-2",
+            // 5. Smooth blur/scale transition
+            "transition-[filter,transform] duration-300 ease-in-out",
+            selected && "blur-sm scale-95 pointer-events-none",
+          )}
+        >
+          {ACCOUNTS.map((account) => {
+            const Icon = account.icon;
+            const isConnected = account.connected;
+
+            return (
+              // 6. layout prop — grid reflow smoothly animate ho
+              <motion.div
+                key={account.provider}
+                layoutId={`card-${account.provider}`}
+                layout
+                transition={SPRING}
+                onClick={() =>
+                  isConnected ? setSelected(account.provider) : null
+                }
+                className={cn(
+                  "relative flex flex-col gap-5 p-5 rounded-2xl",
+                  "border transition-colors duration-300",
+                  "bg-linear-to-b from-indigo-700/60 via-black/40 to-black",
+                  isConnected
+                    ? "border-slate-700/80 cursor-pointer"
+                    : "border-slate-800/60 hover:border-slate-700/60",
                 )}
-              </button>
-            </motion.div>
-          );
-        })}
+                style={{
+                  boxShadow: isConnected
+                    ? `0 0 0 1px ${account.color}22, inset 0 0 30px ${account.color}08`
+                    : "none",
+                }}
+              >
+                {isConnected && (
+                  <span
+                    className="absolute top-4 right-4 w-2 h-2 rounded-full"
+                    style={{
+                      backgroundColor: "#4ade80",
+                      boxShadow: "0 0 6px #4ade80",
+                    }}
+                  />
+                )}
+
+                <div className="flex items-center gap-3">
+                  <motion.div
+                    layoutId={`icon-${account.provider}`}
+                    layout
+                    transition={SPRING}
+                    className="w-11 h-11 rounded-xl flex items-center justify-center border border-neutral-900 shrink-0"
+                    style={{ backgroundColor: account.bgColor }}
+                  >
+                    <Icon size={22} style={{ color: account.color }} />
+                  </motion.div>
+                  <div>
+                    <motion.p
+                      layoutId={`label-${account.provider}`}
+                      layout
+                      transition={SPRING}
+                      className="text-sm font-semibold text-white"
+                    >
+                      {account.label}
+                    </motion.p>
+                    <p className="text-xs text-slate-500 mt-0.5">
+                      {isConnected && account.connectedName
+                        ? account.connectedName
+                        : isConnected
+                          ? "Connected"
+                          : "Not connected"}
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  className={cn(
+                    "h-px w-full rounded-full",
+                    isConnected ? "opacity-40" : "opacity-10",
+                  )}
+                  style={{ backgroundColor: account.color }}
+                />
+
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    account.onConnect?.();
+                  }}
+                  disabled={isConnected || !account.onConnect}
+                  className={cn(
+                    "flex items-center justify-between w-full px-4 py-2.5 rounded-xl text-xs font-medium border transition-all duration-200",
+                    isConnected || !account.onConnect
+                      ? "bg-transparent border-slate-800 text-slate-500 cursor-default"
+                      : "border-slate-700/60 text-slate-300 cursor-pointer hover:text-white hover:border-slate-600 hover:bg-slate-800/40",
+                  )}
+                >
+                  {isConnected ? (
+                    <>
+                      <span>View Details</span>
+                      <CheckCircle2 size={13} style={{ color: "#4ade80" }} />
+                    </>
+                  ) : !account.onConnect ? (
+                    <>
+                      <span>Coming Soon</span>
+                      <ArrowRight size={13} />
+                    </>
+                  ) : (
+                    <>
+                      <span>Connect</span>
+                      <ArrowRight size={13} />
+                    </>
+                  )}
+                </button>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </LayoutGroup>
   );
 }
