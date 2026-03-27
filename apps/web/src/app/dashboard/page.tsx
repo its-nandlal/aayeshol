@@ -1,14 +1,12 @@
-"use client"
 
-import { useAuthStore } from "@/modules/auth/store/store.auth"
+import Header from "@/components/ui/header";
+
 
 export default function Dashboard() {
-  
-  const {user} = useAuthStore()
 
   return (
-    <div className="w-full h-screen bg-black">
-      {user?.name}
-    </div>
-  )
+    <section className="w-full min-h-screen">
+      <Header heading="Dashboard" />
+    </section>
+  );
 }

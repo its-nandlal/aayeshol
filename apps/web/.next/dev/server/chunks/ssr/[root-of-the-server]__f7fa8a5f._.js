@@ -428,36 +428,32 @@ function AuthProvider({ children }) {
         data
     ]);
     // ✅ Redirect logic
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$29$2e$0_react$2d$dom$40$19$2e$2$2e$3_react$40$19$2e$2$2e$3_$5f$react$40$19$2e$2$2e$3$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        if (isPending) return;
-        // Not logged in
-        if (!user) {
-            if (pathname.startsWith("/dashboard") || pathname.startsWith("/admin")) {
-                router.replace("/"); // home
-            }
-            return;
-        }
-        // Logged in user on public page
-        if (pathname === "/" || pathname.startsWith("/auth")) {
-            if (user.role === "ADMIN") {
-                router.replace("/admin/dashboard");
-            } else if (user.role === "USER" || user.role === "PREMIUM") {
-                router.replace("/dashboard");
-            }
-            return;
-        }
-        // Wrong role access
-        if (pathname.startsWith("/admin") && user.role !== "ADMIN") {
-            router.replace("/dashboard");
-        }
-        if (pathname.startsWith("/dashboard") && user.role === "ADMIN") {
-            router.replace("/admin/dashboard");
-        }
-    }, [
-        user,
-        pathname,
-        isPending
-    ]);
+    // useEffect(() => {
+    //   if (isPending) return
+    //   // Not logged in
+    //   if (!user) {
+    //     if (pathname.startsWith("/dashboard") || pathname.startsWith("/admin")) {
+    //       router.replace("/") // home
+    //     }
+    //     return
+    //   }
+    //   // Logged in user on public page
+    //   if (pathname === "/" || pathname.startsWith("/auth")) {
+    //     if (user.role === "ADMIN") {
+    //       router.replace("/admin/dashboard")
+    //     } else if (user.role === "USER" || user.role === "PREMIUM") {
+    //       router.replace("/dashboard")
+    //     }
+    //     return
+    //   }
+    //   // Wrong role access
+    //   if (pathname.startsWith("/admin") && user.role !== "ADMIN") {
+    //     router.replace("/dashboard")
+    //   }
+    //   if (pathname.startsWith("/dashboard") && user.role === "ADMIN") {
+    //     router.replace("/admin/dashboard")
+    //   }
+    // }, [user, pathname, isPending])
     return children;
 }
 }),

@@ -14,7 +14,7 @@ Object.defineProperty(exports, "HeadManagerContext", {
     }
 });
 const _interop_require_default = __turbopack_context__.r("[project]/node_modules/.pnpm/@swc+helpers@0.5.15/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [client] (ecmascript)");
-const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/node_modules/.pnpm/react@19.2.3/node_modules/react/index.js [client] (ecmascript)"));
+const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/apps/web/node_modules/.pnpm/react@19.2.3/node_modules/react/index.js [client] (ecmascript)"));
 const HeadManagerContext = _react.default.createContext({});
 if ("TURBOPACK compile-time truthy", 1) {
     HeadManagerContext.displayName = 'HeadManagerContext';
@@ -82,7 +82,7 @@ Object.defineProperty(exports, "RouterContext", {
     }
 });
 const _interop_require_default = __turbopack_context__.r("[project]/node_modules/.pnpm/@swc+helpers@0.5.15/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [client] (ecmascript)");
-const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/node_modules/.pnpm/react@19.2.3/node_modules/react/index.js [client] (ecmascript)"));
+const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/apps/web/node_modules/.pnpm/react@19.2.3/node_modules/react/index.js [client] (ecmascript)"));
 const RouterContext = _react.default.createContext(null);
 if ("TURBOPACK compile-time truthy", 1) {
     RouterContext.displayName = 'RouterContext';
@@ -4114,53 +4114,21 @@ class Router {
                     return new Promise(()=>{});
                 }
                 const routerFilterSValue = ("TURBOPACK compile-time value", {
-                    "numItems": ("TURBOPACK compile-time value", 4),
+                    "numItems": ("TURBOPACK compile-time value", 9),
                     "errorRate": ("TURBOPACK compile-time value", 0.0001),
-                    "numBits": ("TURBOPACK compile-time value", 77),
+                    "numBits": ("TURBOPACK compile-time value", 173),
                     "numHashes": ("TURBOPACK compile-time value", 14),
                     "bitArray": ("TURBOPACK compile-time value", [
-                        ("TURBOPACK compile-time value", 0),
-                        ("TURBOPACK compile-time value", 1),
-                        ("TURBOPACK compile-time value", 0),
-                        ("TURBOPACK compile-time value", 1),
                         ("TURBOPACK compile-time value", 1),
                         ("TURBOPACK compile-time value", 0),
                         ("TURBOPACK compile-time value", 0),
-                        ("TURBOPACK compile-time value", 0),
-                        ("TURBOPACK compile-time value", 0),
                         ("TURBOPACK compile-time value", 1),
-                        ("TURBOPACK compile-time value", 0),
-                        ("TURBOPACK compile-time value", 0),
-                        ("TURBOPACK compile-time value", 0),
                         ("TURBOPACK compile-time value", 1),
                         ("TURBOPACK compile-time value", 1),
                         ("TURBOPACK compile-time value", 0),
                         ("TURBOPACK compile-time value", 1),
                         ("TURBOPACK compile-time value", 0),
                         ("TURBOPACK compile-time value", 1),
-                        ("TURBOPACK compile-time value", 0),
-                        ("TURBOPACK compile-time value", 1),
-                        ("TURBOPACK compile-time value", 1),
-                        ("TURBOPACK compile-time value", 1),
-                        ("TURBOPACK compile-time value", 0),
-                        ("TURBOPACK compile-time value", 1),
-                        ("TURBOPACK compile-time value", 1),
-                        ("TURBOPACK compile-time value", 0),
-                        ("TURBOPACK compile-time value", 0),
-                        ("TURBOPACK compile-time value", 1),
-                        ("TURBOPACK compile-time value", 0),
-                        ("TURBOPACK compile-time value", 0),
-                        ("TURBOPACK compile-time value", 0),
-                        ("TURBOPACK compile-time value", 0),
-                        ("TURBOPACK compile-time value", 1),
-                        ("TURBOPACK compile-time value", 1),
-                        ("TURBOPACK compile-time value", 1),
-                        ("TURBOPACK compile-time value", 1),
-                        ("TURBOPACK compile-time value", 1),
-                        ("TURBOPACK compile-time value", 1),
-                        ("TURBOPACK compile-time value", 1),
-                        ("TURBOPACK compile-time value", 1),
-                        ("TURBOPACK compile-time value", 0),
                         ("TURBOPACK compile-time value", 1),
                         ("TURBOPACK compile-time value", 1),
                         ("TURBOPACK compile-time value", 0),
@@ -4172,6 +4140,28 @@ class Router {
                         ("TURBOPACK compile-time value", 1),
                         ("TURBOPACK compile-time value", 1),
                         ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
                         ("TURBOPACK compile-time value", 0),
                         ("TURBOPACK compile-time value", 0),
                         ("TURBOPACK compile-time value", 0),
@@ -4184,6 +4174,81 @@ class Router {
                         ("TURBOPACK compile-time value", 0),
                         ("TURBOPACK compile-time value", 0),
                         ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 1),
                         ("TURBOPACK compile-time value", 0),
                         ("TURBOPACK compile-time value", 0),
                         ("TURBOPACK compile-time value", 1),
@@ -4192,14 +4257,45 @@ class Router {
                         ("TURBOPACK compile-time value", 1),
                         ("TURBOPACK compile-time value", 0),
                         ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
                         ("TURBOPACK compile-time value", 0),
                         ("TURBOPACK compile-time value", 1),
                         ("TURBOPACK compile-time value", 0),
-                        ("TURBOPACK compile-time value", 1)
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 1),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0),
+                        ("TURBOPACK compile-time value", 0)
                     ])
                 });
                 if (!staticFilterData && routerFilterSValue) {
-                    staticFilterData = ("TURBOPACK compile-time truthy", 1) ? routerFilterSValue : "TURBOPACK unreachable";
+                    staticFilterData = routerFilterSValue ? routerFilterSValue : undefined;
                 }
                 const routerFilterDValue = ("TURBOPACK compile-time value", {
                     "numItems": ("TURBOPACK compile-time value", 0),
@@ -5205,7 +5301,7 @@ Object.defineProperty(exports, "ImageConfigContext", {
     }
 });
 const _interop_require_default = __turbopack_context__.r("[project]/node_modules/.pnpm/@swc+helpers@0.5.15/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [client] (ecmascript)");
-const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/node_modules/.pnpm/react@19.2.3/node_modules/react/index.js [client] (ecmascript)"));
+const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/apps/web/node_modules/.pnpm/react@19.2.3/node_modules/react/index.js [client] (ecmascript)"));
 const _imageconfig = __turbopack_context__.r("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.29.0_react-dom@19.2.3_react@19.2.3__react@19.2.3/node_modules/next/dist/shared/lib/image-config.js [client] (ecmascript)");
 const ImageConfigContext = _react.default.createContext(_imageconfig.imageConfigDefault);
 if ("TURBOPACK compile-time truthy", 1) {
@@ -5252,7 +5348,7 @@ _export(exports, {
     }
 });
 const _interop_require_default = __turbopack_context__.r("[project]/node_modules/.pnpm/@swc+helpers@0.5.15/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [client] (ecmascript)");
-const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/node_modules/.pnpm/react@19.2.3/node_modules/react/index.js [client] (ecmascript)"));
+const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/apps/web/node_modules/.pnpm/react@19.2.3/node_modules/react/index.js [client] (ecmascript)"));
 const AppRouterContext = _react.default.createContext(null);
 const LayoutRouterContext = _react.default.createContext(null);
 const GlobalLayoutRouterContext = _react.default.createContext(null);
@@ -5308,7 +5404,7 @@ _export(exports, {
         return createDevToolsInstrumentedPromise;
     }
 });
-const _react = __turbopack_context__.r("[project]/node_modules/.pnpm/react@19.2.3/node_modules/react/index.js [client] (ecmascript)");
+const _react = __turbopack_context__.r("[project]/apps/web/node_modules/.pnpm/react@19.2.3/node_modules/react/index.js [client] (ecmascript)");
 const _readonlyurlsearchparams = __turbopack_context__.r("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.29.0_react-dom@19.2.3_react@19.2.3__react@19.2.3/node_modules/next/dist/client/components/readonly-url-search-params.js [client] (ecmascript)");
 const SearchParamsContext = (0, _react.createContext)(null);
 const PathnameContext = (0, _react.createContext)(null);
@@ -5379,8 +5475,8 @@ _export(exports, {
     }
 });
 const _interop_require_wildcard = __turbopack_context__.r("[project]/node_modules/.pnpm/@swc+helpers@0.5.15/node_modules/@swc/helpers/cjs/_interop_require_wildcard.cjs [client] (ecmascript)");
-const _jsxruntime = __turbopack_context__.r("[project]/node_modules/.pnpm/react@19.2.3/node_modules/react/jsx-runtime.js [client] (ecmascript)");
-const _react = /*#__PURE__*/ _interop_require_wildcard._(__turbopack_context__.r("[project]/node_modules/.pnpm/react@19.2.3/node_modules/react/index.js [client] (ecmascript)"));
+const _jsxruntime = __turbopack_context__.r("[project]/apps/web/node_modules/.pnpm/react@19.2.3/node_modules/react/jsx-runtime.js [client] (ecmascript)");
+const _react = /*#__PURE__*/ _interop_require_wildcard._(__turbopack_context__.r("[project]/apps/web/node_modules/.pnpm/react@19.2.3/node_modules/react/index.js [client] (ecmascript)"));
 const _hooksclientcontextsharedruntime = __turbopack_context__.r("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.29.0_react-dom@19.2.3_react@19.2.3__react@19.2.3/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.js [client] (ecmascript)");
 const _utils = __turbopack_context__.r("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.29.0_react-dom@19.2.3_react@19.2.3__react@19.2.3/node_modules/next/dist/shared/lib/router/utils/index.js [client] (ecmascript)");
 const _aspathtosearchparams = __turbopack_context__.r("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.29.0_react-dom@19.2.3_react@19.2.3__react@19.2.3/node_modules/next/dist/shared/lib/router/utils/as-path-to-search-params.js [client] (ecmascript)");
@@ -5766,7 +5862,7 @@ Object.defineProperty(exports, "default", {
         return SideEffect;
     }
 });
-const _react = __turbopack_context__.r("[project]/node_modules/.pnpm/react@19.2.3/node_modules/react/index.js [client] (ecmascript)");
+const _react = __turbopack_context__.r("[project]/apps/web/node_modules/.pnpm/react@19.2.3/node_modules/react/index.js [client] (ecmascript)");
 const isServer = typeof window === 'undefined';
 const useClientOnlyLayoutEffect = isServer ? ()=>{} : _react.useLayoutEffect;
 const useClientOnlyEffect = isServer ? ()=>{} : _react.useEffect;
@@ -5859,8 +5955,8 @@ _export(exports, {
 });
 const _interop_require_default = __turbopack_context__.r("[project]/node_modules/.pnpm/@swc+helpers@0.5.15/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [client] (ecmascript)");
 const _interop_require_wildcard = __turbopack_context__.r("[project]/node_modules/.pnpm/@swc+helpers@0.5.15/node_modules/@swc/helpers/cjs/_interop_require_wildcard.cjs [client] (ecmascript)");
-const _jsxruntime = __turbopack_context__.r("[project]/node_modules/.pnpm/react@19.2.3/node_modules/react/jsx-runtime.js [client] (ecmascript)");
-const _react = /*#__PURE__*/ _interop_require_wildcard._(__turbopack_context__.r("[project]/node_modules/.pnpm/react@19.2.3/node_modules/react/index.js [client] (ecmascript)"));
+const _jsxruntime = __turbopack_context__.r("[project]/apps/web/node_modules/.pnpm/react@19.2.3/node_modules/react/jsx-runtime.js [client] (ecmascript)");
+const _react = /*#__PURE__*/ _interop_require_wildcard._(__turbopack_context__.r("[project]/apps/web/node_modules/.pnpm/react@19.2.3/node_modules/react/index.js [client] (ecmascript)"));
 const _sideeffect = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.29.0_react-dom@19.2.3_react@19.2.3__react@19.2.3/node_modules/next/dist/shared/lib/side-effect.js [client] (ecmascript)"));
 const _headmanagercontextsharedruntime = __turbopack_context__.r("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.29.0_react-dom@19.2.3_react@19.2.3__react@19.2.3/node_modules/next/dist/shared/lib/head-manager-context.shared-runtime.js [client] (ecmascript)");
 const _warnonce = __turbopack_context__.r("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.29.0_react-dom@19.2.3_react@19.2.3__react@19.2.3/node_modules/next/dist/shared/lib/utils/warn-once.js [client] (ecmascript)");
