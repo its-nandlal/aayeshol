@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 40, "column": 0}, "map": {"version":3,"sources":["file:///Users/nick/Desktop/Aayeshol/apps/web/proxy.ts"],"sourcesContent":["import { NextResponse } from 'next/server'\nimport type { NextRequest } from 'next/server'\n \n// This function can be marked `async` if using `await` inside\nexport function proxy(request: NextRequest) {\n  console.log(\"Redirate Proxy\", request)\n//   return NextResponse.redirect(new URL('/', request.url))\n}\n \n// Alternatively, you can use a default export:\n// export default function proxy(request: NextRequest) { ... }\n \nexport const config = {\n  matcher: '/dashboard/:path*',\n}"],"names":[],"mappings":";;;;;;AAIO,SAAS,MAAM,OAAoB;IACxC,QAAQ,GAAG,CAAC,kBAAkB;AAChC,4DAA4D;AAC5D;AAKO,MAAM,SAAS;IACpB,SAAS;AACX"}}]
-}

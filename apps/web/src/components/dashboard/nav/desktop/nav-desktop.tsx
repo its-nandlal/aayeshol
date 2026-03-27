@@ -53,12 +53,6 @@ const navItems: NavItem[] = [
     icon: CalendarClock,
     exact: false,
   },
-  {
-    label: "Settings",
-    href: "/dashboard/settings",
-    icon: Cog,
-    exact: false,
-  },
 ];
 
 // Shared spring config — tumhari tuned values rakhi hain

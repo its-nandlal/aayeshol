@@ -15,7 +15,6 @@ import { aiRequest, AIRequest } from "../schemas/airequest.schema";
 import { useGenerateAI } from "../hooks/use-ai";
 import { useAIStore } from "../stores/ai.store";
 
-// Enum → options array helpers
 const enumToOptions = (e: Record<string, string>) =>
   Object.values(e).map((v) => ({ label: v, value: v }));
 
@@ -45,7 +44,6 @@ export default function AiRequest() {
   const content = useAIStore((state) => state.content);
 
   const onSubmit = (data: AIRequest) => {
-    // Object से FormData बनाओ (backend FormData expect करता है)
     const formData = new FormData();
 
     Object.entries(data).forEach(([key, value]) => {
@@ -63,8 +61,14 @@ export default function AiRequest() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="p-2 space-y-6">
-        {/* Textarea fields */}
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="h-full overflow-y-auto p-4 space-y-4
+          [&::-webkit-scrollbar]:w-1.5
+          [&::-webkit-scrollbar-track]:bg-transparent
+          [&::-webkit-scrollbar-thumb]:bg-indigo-800/50
+          [&::-webkit-scrollbar-thumb]:rounded-full"
+      >
         <FormTextarea
           control={form.control}
           name="instructions"
@@ -82,7 +86,6 @@ export default function AiRequest() {
           disabled={isPending}
         />
 
-        {/* Select fields — 2 column grid */}
         <div className="grid grid-cols-2 gap-4">
           <FormSelect
             control={form.control}
@@ -119,9 +122,10 @@ export default function AiRequest() {
         <PrimaryButton
           type="submit"
           disabled={isPending}
-          className=" opacity-70"
+          className="sticky bottom-2 w-full bg-indigo-600/90 hover:bg-indigo-500
+          border border-indigo-500/40 text-white transition-all"
         >
-          {isPending ? "Generating..." : "Generate"} {/* ✅ loading state */}
+          {isPending ? "Generating..." : "Generate"}
         </PrimaryButton>
       </form>
     </Form>

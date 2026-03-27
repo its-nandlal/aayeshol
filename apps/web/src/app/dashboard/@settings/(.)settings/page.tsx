@@ -35,7 +35,7 @@ export default function Settings() {
         className="relative w-250 h-150 rounded-2xl"
       >
         {/* Background */}
-        <div className="absolute inset-0 -z-1 bg-linear-to-b from-black/60 via-indigo-700/60 via-40% to-indigo-700/60 backdrop-blur-md border border-indigo-800/60 outline outline-slate-700/60 shadow-[inset_0px_0px_15px_10px] shadow-indigo-500/10 rounded-2xl" />
+        <div className="absolute inset-0 -z-1 bg-linear-to-b from-black/90  to-indigo-700/90 backdrop-blur-md border border-indigo-950/60 outline outline-slate-700/60 shadow-[inset_0px_0px_15px_10px] shadow-indigo-500/10 rounded-2xl" />
 
         {/* Heading */}
         <div className="w-full p-6 flex items-center justify-between border-b border-slate-700/70">

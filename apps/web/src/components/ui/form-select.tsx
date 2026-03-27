@@ -25,7 +25,7 @@ export default function FormSelect({
       name={name}
       render={({ field }) => (
         <FormItem className="space-y-2">
-          <FormLabel className="font-funnel-sans text-sm font-medium text-zinc-300">
+          <FormLabel className="font-funnel-sans text-sm font-medium text-indigo-200">
             {lable} {required && <span className="text-red-500 ml-1">*</span>}
           </FormLabel>
 
@@ -34,9 +34,9 @@ export default function FormSelect({
               <SelectTrigger
                 className="
                   rounded
-                  bg-zinc-900/70
-                  border border-zinc-700
-                  text-zinc-200
+                  bg-indigo-900/20
+                  border border-indigo-950
+                  text-indigo-200/90
                   focus:border-purple-400/40!
                   focus:ring-2!
                   focus:ring-neutral-400/20!
@@ -46,12 +46,12 @@ export default function FormSelect({
                 <SelectValue placeholder={placeholder} />
               </SelectTrigger>
             </FormControl>
-            <SelectContent className="bg-zinc-900 border-zinc-700 text-zinc-200">
+            <SelectContent className="bg-indigo-900 border-indigo-950 text-indigo-200 space-y-2">
               {options.map((opt) => (
                 <SelectItem
                   key={opt.value}
                   value={opt.value}
-                  className="focus:bg-zinc-800 focus:text-zinc-100"
+                  className="bg-indigo-950 focus:bg-indigo-800 text-indigo-300 focus:text-indigo-200/90 mt-1"
                 >
                   {opt.label}
                 </SelectItem>
