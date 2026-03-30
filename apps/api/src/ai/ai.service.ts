@@ -1,13 +1,19 @@
 import { Injectable } from '@nestjs/common';
 import { GenerateContentDto } from './schemas/ai.schema';
 import { ChatGoogleGenerativeAI } from '@langchain/google-genai';
+import { ChatMistralAI } from '@langchain/mistralai';
 import { HumanMessage, SystemMessage } from '@langchain/core/messages';
 
 @Injectable()
 export class AiService {
-  private readonly model = new ChatGoogleGenerativeAI({
+  private readonly gemAIModel = new ChatGoogleGenerativeAI({
     model: 'gemini-2.5-flash',
     apiKey: process.env.GOOGLE_API_KEY,
+  });
+
+  private readonly mistralAIModel = new ChatMistralAI({
+    model: 'mistral-small-latest',
+    apiKey: process.env.MISTRAL_API_KEY,
   });
 
   async contentGenerate(dto: GenerateContentDto) {
@@ -159,7 +165,7 @@ export class AiService {
       
       Detect the intent and format automatically. Make it viral-worthy and perfectly match all user settings above.`;
 
-    const response = await this.model.invoke([
+    const response = await this.gemAIModel.invoke([
       new SystemMessage(systemPrompt),
       new HumanMessage(humanPrompt),
     ]);
@@ -172,5 +178,25 @@ export class AiService {
       .trim();
 
     return { content: html };
+  }
+
+  async generateTitle(content: string) {
+    const prompt = `You are a social media content expert.
+    Your job is to generate a single post title.
+    
+    Rules:
+    - Title MUST be 4 to 6 words only
+    - Catchy, engaging, and relevant to the content
+    - No punctuation at the end
+    - Return ONLY the title — no explanation, no quotes, no extra text`;
+
+    const instruction = `Based on this content: "${content}", generate a catchy post title.`;
+
+    const response = await this.mistralAIModel.invoke([
+      new SystemMessage(prompt),
+      new HumanMessage(instruction),
+    ]);
+
+    return response.text;
   }
 }
