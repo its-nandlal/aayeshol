@@ -52,8 +52,10 @@ export default function FormAuth() {
     });
 
     if (isRegister) {
+      console.log("Registering user with data:", data);
       signUpMutate.mutate(formData);
     } else {
+      console.log("Signing in user with data:", data);
       signInMutate.mutate(formData);
     }
   };
@@ -133,6 +135,7 @@ export default function FormAuth() {
 
           {/* PrimaryButton disabled handling (prop न हो तो class से) */}
           <PrimaryButton
+          type="submit"
             className={form.formState.isSubmitting ? "opacity-70 cursor-wait" : ""}
             disabled={form.formState.isSubmitting}
           >
