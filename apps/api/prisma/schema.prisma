@@ -28,6 +28,7 @@ model User {
   accounts      Account[]
 
   socialAccount SocialAccount[]
+  socialPost    SocialPost[]
 
   @@map("user")
 }
@@ -81,9 +82,23 @@ model Verification {
 }
 
 
+enum Platform {
+  LINKEDIN
+  TWITTER
+  THREADS
+}
+
+enum PostStatus {
+  DRAFT
+  PUBLISHED
+  FAILED
+}
+
+
+
 model SocialAccount {
   id                String   @id @default(cuid())
-  provider          String   // "linkedin", "instagram", etc.
+  provider          Platform @default(LINKEDIN)
   providerAccountId String   // LinkedIn ka user ID
   accessToken       String
 
@@ -93,9 +108,33 @@ model SocialAccount {
 
   
   userId            String
-  createdAt         DateTime @default(now())
 
+  posts  SocialPost[]
   user User @relation(fields: [userId], references: [id])
 
+
+  createdAt         DateTime @default(now())
+  // updatedAt         DateTime @updatedAt
+
   @@unique([userId, provider]) // ek user ek provider se sirf ek baar connect
+}
+
+model SocialPost {
+  id             String     @id @default(cuid())
+  title          String?
+  content        String     // TipTap ka HTML/text content
+  platform       Platform   @default(LINKEDIN)
+  status         PostStatus @default(DRAFT)
+  platformPostId String?    // LinkedIn/Twitter se mila post ID
+  mediaUrls      String[]   // future: images/videos
+  publishedAt    DateTime?
+  createdAt      DateTime   @default(now())
+  updatedAt      DateTime   @updatedAt
+
+  userId         String
+  user           User       @relation(fields: [userId], references: [id])
+
+  socialAccountId   String?
+  socialAccount     SocialAccount? @relation(fields: [socialAccountId], references: [id])
+
 }

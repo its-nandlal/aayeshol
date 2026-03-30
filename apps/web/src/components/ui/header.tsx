@@ -23,10 +23,12 @@ export type IconName = keyof typeof ICON_MAP;
 
 export interface HeaderAction {
   label: string;
-  icon?: IconName;       // ✅ string — Server se safely pass hoga
+  icon?: LucideIcon;       // ✅ string — Server se safely pass hoga
   href?: string;
   onClick?: () => void;
   variant?: "primary" | "ghost";
+  isPending?: boolean;
+  loadingText?: string;
 }
 
 interface HeaderProps {
@@ -61,20 +63,18 @@ export default function Header({
       {actions.length > 0 && (
         <div className="flex items-center gap-2 shrink-0">
           {actions.map((action, i) => {
-            const Icon = action.icon ? ICON_MAP[action.icon] : null;
-
             const cls = cn(
               "flex items-center gap-1",
               "bg-linear-to-l from-indigo-900/30 to-blue-950/20 text-slate-400 text-sm",
               "border border-slate-700/70",
               "shadow-[inset_0px_0px_15px_1px] shadow-indigo-900/60",
               "p-2 px-5 rounded-xl cursor-pointer",
-              "hover:text-white/80 hover:shadow-indigo-900/90 hover:border-slate-700/90"
+              "hover:text-white/90 hover:from-indigo-800/30 hover:to-blue-900/20 hover:shadow-indigo-900/90 hover:border-slate-800/90"
             );
 
             const inner = (
               <>
-                {Icon && <Icon size={15} />}
+                {action.icon && <action.icon size={15} />}
                 <span>{action.label}</span>
               </>
             );
@@ -88,8 +88,12 @@ export default function Header({
             }
 
             return (
-              <button key={i} onClick={action.onClick} className={cls}>
-                {inner}
+              <button 
+              key={i} 
+              onClick={action.onClick} 
+              disabled={action.isPending}
+              className={cls}>
+                {action.isPending ? (action.loadingText || "Loading...") : inner}
               </button>
             );
           })}
