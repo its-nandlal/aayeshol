@@ -23,7 +23,6 @@ services:
     networks:
       - aayes
 
-  # 🔴 Redis optional (future use)
   redis:
     image: redis:7
     container_name: aayes_redis
