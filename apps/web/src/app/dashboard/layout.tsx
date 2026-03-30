@@ -11,7 +11,7 @@ export default function DeshboardLayout({children, settings}: DeshboardLayoutPro
   return (
     <div className="w-full max-h-screen h-screen bg-black flex overflow-hidden">
         <NavDesktop />
-      <main className="relative z-2 flex-1 bg-black/50 backdrop-blur-2xl">
+      <main className="relative z-2 flex-1 bg-black/50">
           {children}
           {settings}
       </main>
