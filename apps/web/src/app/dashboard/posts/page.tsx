@@ -2,6 +2,7 @@
 
 import Header from "@/components/ui/header";
 import Posts from "@/modules/posts/components/posts";
+import PostCardSkeleton from "@/modules/posts/components/ui/post-card-skeleton";
 import { usePosts } from "@/modules/posts/hooks/use-posts";
 import { useRef, useEffect } from "react";
 
@@ -48,7 +49,7 @@ export default function PostsPage() {
   const allPosts = data?.pages.flatMap((page) => page.posts) ?? [];
 
   return (
-    <section className="w-full h-screen overflow-y-auto">
+    <section className="w-full h-screen overflow-y-auto max-md:pb-16">
       <Header heading="All Posts" />
       <div className="space-y-4 p-2">
         {allPosts.map((post) => (
@@ -57,9 +58,16 @@ export default function PostsPage() {
       </div>
 
       <div ref={observerRef} className="h-10" />
-      {isFetchingNextPage && <p>Aur posts aa rahe hain... ⏳</p>}
+      {isFetchingNextPage && (
+          <div className="grid gap-4">
+    {Array.from({ length: 6 }).map((_, i) => (
+      <PostCardSkeleton key={i} />
+    ))}
+  </div>
+
+      )}
       {!hasNextPage && (
-        <p className="text-center text-gray-400">Sab posts dekh liye! ✅</p>
+        <p className="text-center text-gray-400">NO MORE POSTS..</p>
       )}
     </section>
   );

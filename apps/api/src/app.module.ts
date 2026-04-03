@@ -8,6 +8,10 @@ import { AuthModule } from './auth/auth.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { SocialModule } from './social/social.module';
 import { AiModule } from './ai/ai.module';
+import { PostsModule } from './posts/posts.module';
+import { UsersService } from './users/users.service';
+import { UsersModule } from './users/users.module';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 @Module({
   imports: [
@@ -16,8 +20,11 @@ import { AiModule } from './ai/ai.module';
     PrismaModule,
     SocialModule,
     AiModule,
+    PostsModule,
+    UsersModule,
+    DashboardModule,
   ],
   controllers: [AppController, UsersController],
-  providers: [AppService],
+  providers: [AppService, UsersService],
 })
 export class AppModule {}

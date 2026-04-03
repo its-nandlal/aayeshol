@@ -1,5 +1,6 @@
 import Background from "@/components/background";
 import NavDesktop from "@/components/dashboard/nav/desktop/nav-desktop";
+import NavMobile from "@/components/dashboard/nav/mobile/nav-mobile";
 
 
 interface DeshboardLayoutProps {
@@ -15,6 +16,7 @@ export default function DeshboardLayout({children, settings}: DeshboardLayoutPro
           {children}
           {settings}
       </main>
+      <NavMobile />
       <Background />
     </div>
   )
