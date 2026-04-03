@@ -14,6 +14,7 @@ import {
   PanelRightClose,
   LucideIcon,
   ChevronRight,
+  Bot,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Logo from "@/../public/logo.svg";
@@ -97,14 +98,14 @@ export default function NavDesktop() {
       </motion.button>
 
       {/* Header — tumhari border-b aur h-20 rakhi */}
-      <div className="h-20 flex items-center gap-3 px-5 py-8 min-w-0 border-b border-slate-800/60">
+      <div className="h-16 xl:h-20 flex items-center gap-1.5 xl:gap-3 px-5 py-8 min-w-0 border-b border-slate-800/60">
         <div className="shrink-0">
           <Image
             src={Logo}
             alt="Aayeshol Logo"
             width={44}
             height={44}
-            className="rounded-xl shadow-lg shadow-indigo-500/20"
+            className="rounded-xl shadow-lg shadow-indigo-500/20 max-xl:w-8 h-8 object-cover"
             priority
           />
         </div>
@@ -117,7 +118,7 @@ export default function NavDesktop() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -8 }}
               transition={{ duration: 0.18, ease: [0.4, 0, 0.2, 1] }}
-              className="text-2xl font-bold tracking-tight bg-linear-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent whitespace-nowrap"
+              className="text-xl xl:text-2xl font-bold tracking-tight flex items-center bg-linear-to-r from-indigo-500 via-purple-500 to-blue-500 bg-clip-text text-transparent whitespace-nowrap"
             >
               Aayeshol
             </motion.h1>
@@ -126,7 +127,7 @@ export default function NavDesktop() {
       </div>
 
       {/* Navigation Links — tumhari space-y-2 rakhi */}
-      <nav className="flex-1 flex flex-col px-2 py-2 space-y-2">
+      <nav className="flex-1 flex flex-col py-2 space-y-2">
         {navItems.map((item) => {
           // exact flag se Dashboard aur New Post sirf apne exact route pe active rahenge
           const isActive = item.exact

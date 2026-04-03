@@ -63,7 +63,7 @@ export default function AiRequest() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="h-full overflow-y-auto p-4 space-y-4
+        className="h-[90%] md:h-full overflow-y-auto p-4 space-y-4
           [&::-webkit-scrollbar]:w-1.5
           [&::-webkit-scrollbar-track]:bg-transparent
           [&::-webkit-scrollbar-thumb]:bg-indigo-800/50
@@ -119,14 +119,16 @@ export default function AiRequest() {
           />
         </div>
 
-        <PrimaryButton
-          type="submit"
-          disabled={isPending}
-          className="sticky bottom-2 w-full bg-indigo-600/90 hover:bg-indigo-500
-          border border-indigo-500/40 text-white transition-all"
-        >
-          {isPending ? "Generating..." : "Generate"}
-        </PrimaryButton>
+        <div className="sticky bottom-0 w-full h-fit bg-indigo-800">
+          <PrimaryButton
+            type="submit"
+            disabled={isPending}
+            className=" bg-indigo-600/90 hover:bg-indigo-500
+            border border-indigo-500/40 text-white transition-all"
+          >
+            {isPending ? "Generating..." : "Generate"}
+          </PrimaryButton>
+        </div>
       </form>
     </Form>
   );
