@@ -4,22 +4,22 @@ import "./globals.css";
 import QueryProvider from "@/lib/providers/qurey-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { AuthProvider } from "@/lib/providers/auth-provider";
+import Background from "@/components/background";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-
 const funnelSans = Funnel_Sans({
   variable: "--font-funnel-sans",
-  subsets: ["latin"]
-})
+  subsets: ["latin"],
+});
 
 const funnelDisplay = Funnel_Display({
   variable: "--font-funnel-display",
-  subsets: ["latin"]
-})
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: {
@@ -40,8 +40,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://aayeshol.com"),
   openGraph: {
     title: "Aayeshol",
-    description:
-      "Generate trending posts automatically with AI automation.",
+    description: "Generate trending posts automatically with AI automation.",
     url: "https://aayeshol.com",
     siteName: "Aayeshol",
     locale: "en_US",
@@ -57,13 +56,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${funnelSans.variable} ${funnelDisplay.variable} text-zinc-200 antialiased`}
+        className={`${geistSans.variable} ${funnelSans.variable} ${funnelDisplay.variable} bg-black text-zinc-200 antialiased`}
       >
         <QueryProvider>
           <AuthProvider>
-          {children}
-          <Toaster
-            position="top-right"/>
+            <main className="bg-linear-to-tr from-indigo-700/40 to-black/10">{children}</main>
+
+            <Toaster position="top-right" />
           </AuthProvider>
         </QueryProvider>
       </body>

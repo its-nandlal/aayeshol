@@ -79,7 +79,7 @@ export default function PostCard({ post }: { post: Post }) {
   const status = statusConfig[post.status] ?? {
     label: post.status,
     icon: null,
-    badgeClass: "bg-slate-500/10 text-slate-400 border-slate-500/20",
+    badgeClass: `${post.status === 'PUBLISHED' ? 'bg-green-500/50 text-white  border-red-500' : post.status === 'DRAFT' ? 'bg-slate-500/10' : post.status === 'FAILED' ? 'bg-red-500/10' : 'bg-slate-500/10'}   text-slate-400 border border-slate-500/20`,
   };
 
   const { mutate, isPending } = useDeletePost();
@@ -109,7 +109,7 @@ export default function PostCard({ post }: { post: Post }) {
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-indigo-400/30 to-transparent" />
 
         {/* ── Header ── */}
-        <div className="flex items-center justify-between border-b border-white/[0.05] px-5 py-3.5">
+        <div className="flex items-center justify-between border-b border-white/5 px-5 py-3.5">
           <div className="flex items-center gap-2">
             {/* Platform badge */}
             <span
@@ -149,7 +149,10 @@ export default function PostCard({ post }: { post: Post }) {
             {/* Date */}
             <span className="flex items-center gap-1.5 font-mono text-[10px] tracking-wide text-slate-400">
               <Calendar size={10} />
-              {new Date(post.publishedAt).toLocaleDateString()}
+              {/* ({new Date(post.publishedAt).toLocaleDateString()})  */}
+
+              {post.publishedAt ? (new Date(post.publishedAt).toLocaleDateString())
+              : (new Date(post.createdAt).toLocaleDateString())}
             </span>
 
             {/* Delete button — visible on card hover */}

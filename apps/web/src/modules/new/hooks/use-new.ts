@@ -5,7 +5,7 @@ import { api } from "@/lib/axios";
 import { toast } from "sonner";
 
 async function postContentAPI(content: string, platform: string) {
-  const { data } = await api.post("/social/post/publish", {
+  const { data } = await api.post("/posts/publish", {
     content,
     platform,
   });
@@ -13,7 +13,7 @@ async function postContentAPI(content: string, platform: string) {
 }
 
 async function saveToDraftAPI(content: string, platform: string) {
-  const { data } = await api.post("/social/post/savedraft", {
+  const { data } = await api.post("/posts/savedraft", {
     content,
     platform,
   });

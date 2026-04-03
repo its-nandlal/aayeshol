@@ -1,4 +1,5 @@
 "use client";
+import Header from "@/components/ui/header";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 import AbboutSettings from "@/modules/settings/components/abbout.settings";
 import UserSettings from "@/modules/settings/components/user.settings";
@@ -32,13 +33,13 @@ export default function Settings() {
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: 10, scale: 0.98 }}
         transition={{ ease: "easeInOut", duration: 0.4 }}
-        className="relative w-250 h-150 rounded-2xl"
+        className="relative w-100 h-130 md:w-250 md:h-150 rounded-2xl"
       >
         {/* Background */}
         <div className="absolute inset-0 -z-1 bg-linear-to-b from-black/90  to-indigo-700/90 backdrop-blur-md border border-indigo-950/60 outline outline-slate-700/60 shadow-[inset_0px_0px_15px_10px] shadow-indigo-500/10 rounded-2xl" />
 
         {/* Heading */}
-        <div className="w-full p-6 flex items-center justify-between border-b border-slate-700/70">
+        {/* <div className="w-full p-6 flex items-center justify-between border-b border-slate-700/70">
           <h3 className="text-lg">Setting</h3>
           <button
             onClick={handleClose}
@@ -46,7 +47,20 @@ export default function Settings() {
           >
             <X className="w-4.5 m-auto" />
           </button>
-        </div>
+        </div> */}
+
+
+        <Header
+          heading="Setting"
+          actions={[
+            {
+              label: "",
+              icon: X,
+              onClick: handleClose,
+            },
+          ]}
+        />
+
 
         {/* Tab Navigation */}
         <div className="p-2 flex items-center gap-2">

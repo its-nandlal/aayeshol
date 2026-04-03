@@ -61,7 +61,7 @@ export default function FormAuth() {
   };
 
   return (
-    <div className="w-full h-full py-20 space-y-10 text-neutral-200">
+    <div className="w-full h-full py-5 md:py-20 space-y-10 text-neutral-200">
       {/* TOP */}
       <div className="flex flex-col gap-2">
         <Image
@@ -85,7 +85,7 @@ export default function FormAuth() {
 
       {/* FORM */}
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="w-4/5 space-y-6">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="md:w-4/5 space-y-6">
           {isRegister && (
             <div className="grid grid-cols-2 gap-4">
               <FormInput

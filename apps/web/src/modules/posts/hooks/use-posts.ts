@@ -13,6 +13,7 @@ export interface Post {
   platform: string;
   publishedAt: Date;
   status: string;
+  createdAt: Date;
 }
 
 interface PostsResponse {
@@ -26,13 +27,13 @@ interface PostsResponse {
 
 async function getPostAPI(page: number, perPage: number): Promise<PostsResponse> {
   const { data } = await api.get(
-    `/social/posts?page=${page}&perPage=${perPage}`,
+    `/posts?page=${page}&perPage=${perPage}`,
   );
   return data;
 }
 
 async function deletePostAPI(postId: string) {
-  const { data } = await api.post(`/social/post/delete`, { postId });
+  const { data } = await api.post(`/posts/delete`, { postId });
   return data;
 }
 
