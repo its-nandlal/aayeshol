@@ -6,6 +6,7 @@ node_modules
 .turbo
 **/.turbo
 
+
 .next
 **/.next
 out/
@@ -35,7 +36,6 @@ temp/
 .eslintcache
 *.tsbuildinfo
 
-# Environment files - NEVER in Docker
 .env
 .env.*
 .env.local
