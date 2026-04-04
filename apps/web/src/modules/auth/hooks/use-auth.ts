@@ -3,7 +3,7 @@
 import { api } from "@/lib/axios";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
-import { SignupResponse, SigninResponse } from "@/../../../Aayeshol/packages/types/auth";
+import { SignupResponse, SigninResponse } from "../types/auth.types";
 
 // ======== API Functions ========
 
@@ -43,7 +43,8 @@ export const useSignUp = () => {
       toast.success("Signup successful! Welcome " + data.user.name);
     },
     onError: (err: unknown) => {
-      toast.error(err.response?.data?.message || "Signup failed. Please try again.");
+      const message = (err as any)?.response?.data?.message
+      toast.error(message || "Signup failed. Please try again.");
     },
   });
 };
