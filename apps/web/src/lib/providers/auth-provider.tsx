@@ -29,7 +29,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     // Not logged in
     if (!user) {
       if (pathname.startsWith("/dashboard") || pathname.startsWith("/admin")) {
-        console.log(user)
         router.replace("/") // home
       }
       return

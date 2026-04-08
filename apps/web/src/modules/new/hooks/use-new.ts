@@ -38,7 +38,6 @@ export const usePostContent = () => {
       queryClient.invalidateQueries({ queryKey: ["social-posts"] });
     },
     onError: (err) => {
-      console.error("Error publishing post:", err);
       toast.error("Failed to publish post. Please try again.");
     },
   });
@@ -61,7 +60,6 @@ export const useSaveDraft = () => {
       qureyClient.invalidateQueries({ queryKey: ["social-posts"] });
     },
     onError: (err) => {
-      console.error("Error saving draft:", err);
       toast.error("Failed to save draft. Please try again.");
     },
   });
